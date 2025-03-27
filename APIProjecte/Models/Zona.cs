@@ -7,11 +7,11 @@ public partial class Zona
 {
     public int Id { get; set; }
 
-    public string? CodiPostal { get; set; }
+    public string? ComunitatA { get; set; }
 
     public string? Ciutat { get; set; }
 
-    public string? Comarca { get; set; }
+    public string? Provincia { get; set; }
 
     public string? Pais { get; set; }
 

@@ -271,18 +271,18 @@ public partial class EasydriveContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("ciutat");
-            entity.Property(e => e.CodiPostal)
+            entity.Property(e => e.ComunitatA)
                 .HasMaxLength(20)
                 .IsUnicode(false)
-                .HasColumnName("codi_postal");
-            entity.Property(e => e.Comarca)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("comarca");
+                .HasColumnName("comunitat_a");
             entity.Property(e => e.Pais)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("pais");
+            entity.Property(e => e.Provincia)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("provincia");
 
             entity.HasMany(d => d.IdTaxista).WithMany(p => p.IdZonas)
                 .UsingEntity<Dictionary<string, object>>(

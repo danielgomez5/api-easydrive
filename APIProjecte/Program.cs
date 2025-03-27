@@ -1,3 +1,5 @@
+
+
 using APIProjecte.Models;
 
 var builder = WebApplication.CreateBuilder(args);
