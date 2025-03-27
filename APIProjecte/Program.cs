@@ -19,7 +19,7 @@ using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<EasydriveContext>();
     var importador = new ObtenirZones(dbContext);
-    importador.ImportarDatosDesdeJson("arbol.json"); 
+    importador.ImportarDatosDesdeJson("arbol.json");
 }
 
 // Configure the HTTP request pipeline.

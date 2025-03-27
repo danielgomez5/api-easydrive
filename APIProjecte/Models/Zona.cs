@@ -15,6 +15,8 @@ public partial class Zona
 
     public string? Pais { get; set; }
 
+    public bool? Estat { get; set; }
+
     public virtual ICollection<Usuari> Usuaris { get; set; } = new List<Usuari>();
 
     public virtual ICollection<Viatge> Viatges { get; set; } = new List<Viatge>();

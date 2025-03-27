@@ -37,7 +37,7 @@ public partial class EasydriveContext : DbContext
     {
         modelBuilder.Entity<Cotxe>(entity =>
         {
-            entity.HasKey(e => e.Matricula).HasName("PK__Cotxe__30962D14580D0035");
+            entity.HasKey(e => e.Matricula).HasName("PK__Cotxe__30962D14EDF66774");
 
             entity.ToTable("Cotxe");
 
@@ -69,7 +69,7 @@ public partial class EasydriveContext : DbContext
 
         modelBuilder.Entity<DadesPagament>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DadesPag__3213E83FD89270C7");
+            entity.HasKey(e => e.Id).HasName("PK__DadesPag__3213E83F23ADC094");
 
             entity.ToTable("DadesPagament");
 
@@ -90,12 +90,12 @@ public partial class EasydriveContext : DbContext
 
             entity.HasOne(d => d.IdUsuariNavigation).WithMany(p => p.DadesPagaments)
                 .HasForeignKey(d => d.IdUsuari)
-                .HasConstraintName("FK__DadesPaga__id_us__3B75D760");
+                .HasConstraintName("FK__DadesPaga__id_us__3C69FB99");
         });
 
         modelBuilder.Entity<Estat>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Estat__3213E83F002A11AC");
+            entity.HasKey(e => e.Id).HasName("PK__Estat__3213E83F67CE8ACC");
 
             entity.ToTable("Estat");
 
@@ -108,7 +108,7 @@ public partial class EasydriveContext : DbContext
 
         modelBuilder.Entity<Reserva>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Reserva__3213E83FD56DAA07");
+            entity.HasKey(e => e.Id).HasName("PK__Reserva__3213E83F03919896");
 
             entity.ToTable("Reserva");
 
@@ -138,16 +138,16 @@ public partial class EasydriveContext : DbContext
 
             entity.HasOne(d => d.IdEstatNavigation).WithMany(p => p.Reservas)
                 .HasForeignKey(d => d.IdEstat)
-                .HasConstraintName("FK__Reserva__id_esta__46E78A0C");
+                .HasConstraintName("FK__Reserva__id_esta__47DBAE45");
 
             entity.HasOne(d => d.IdUsuariNavigation).WithMany(p => p.Reservas)
                 .HasForeignKey(d => d.IdUsuari)
-                .HasConstraintName("FK__Reserva__id_usua__45F365D3");
+                .HasConstraintName("FK__Reserva__id_usua__46E78A0C");
         });
 
         modelBuilder.Entity<Usuari>(entity =>
         {
-            entity.HasKey(e => e.Dni).HasName("PK__Usuari__C035B8DCC0129FE2");
+            entity.HasKey(e => e.Dni).HasName("PK__Usuari__C035B8DC2064ED4F");
 
             entity.ToTable("Usuari");
 
@@ -187,7 +187,7 @@ public partial class EasydriveContext : DbContext
 
             entity.HasOne(d => d.IdZonaNavigation).WithMany(p => p.Usuaris)
                 .HasForeignKey(d => d.IdZona)
-                .HasConstraintName("FK__Usuari__id_zona__38996AB5");
+                .HasConstraintName("FK__Usuari__id_zona__398D8EEE");
 
             entity.HasMany(d => d.Matriculas).WithMany(p => p.IdUsuaris)
                 .UsingEntity<Dictionary<string, object>>(
@@ -195,14 +195,14 @@ public partial class EasydriveContext : DbContext
                     r => r.HasOne<Cotxe>().WithMany()
                         .HasForeignKey("Matricula")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__CotxeUsua__matri__412EB0B6"),
+                        .HasConstraintName("FK__CotxeUsua__matri__4222D4EF"),
                     l => l.HasOne<Usuari>().WithMany()
                         .HasForeignKey("IdUsuari")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__CotxeUsua__id_us__403A8C7D"),
+                        .HasConstraintName("FK__CotxeUsua__id_us__412EB0B6"),
                     j =>
                     {
-                        j.HasKey("IdUsuari", "Matricula").HasName("PK__CotxeUsu__B7D3A84984AC0FDF");
+                        j.HasKey("IdUsuari", "Matricula").HasName("PK__CotxeUsu__B7D3A84975ABBF5C");
                         j.ToTable("CotxeUsuari");
                         j.IndexerProperty<string>("IdUsuari")
                             .HasMaxLength(9)
@@ -217,7 +217,7 @@ public partial class EasydriveContext : DbContext
 
         modelBuilder.Entity<Viatge>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Viatge__3213E83F3FAE0D2D");
+            entity.HasKey(e => e.Id).HasName("PK__Viatge__3213E83F42AA21C8");
 
             entity.ToTable("Viatge");
 
@@ -245,42 +245,43 @@ public partial class EasydriveContext : DbContext
 
             entity.HasOne(d => d.IdCotxeNavigation).WithMany(p => p.Viatges)
                 .HasForeignKey(d => d.IdCotxe)
-                .HasConstraintName("FK__Viatge__id_cotxe__4CA06362");
+                .HasConstraintName("FK__Viatge__id_cotxe__4D94879B");
 
             entity.HasOne(d => d.IdReservaNavigation).WithMany(p => p.Viatges)
                 .HasForeignKey(d => d.IdReserva)
-                .HasConstraintName("FK__Viatge__id_reser__4BAC3F29");
+                .HasConstraintName("FK__Viatge__id_reser__4CA06362");
 
             entity.HasOne(d => d.IdTaxistaNavigation).WithMany(p => p.Viatges)
                 .HasForeignKey(d => d.IdTaxista)
-                .HasConstraintName("FK__Viatge__id_taxis__4AB81AF0");
+                .HasConstraintName("FK__Viatge__id_taxis__4BAC3F29");
 
             entity.HasOne(d => d.IdZonaNavigation).WithMany(p => p.Viatges)
                 .HasForeignKey(d => d.IdZona)
-                .HasConstraintName("FK__Viatge__id_zona__49C3F6B7");
+                .HasConstraintName("FK__Viatge__id_zona__4AB81AF0");
         });
 
         modelBuilder.Entity<Zona>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Zona__3213E83F9DBBC9BB");
+            entity.HasKey(e => e.Id).HasName("PK__Zona__3213E83FD46DFE06");
 
             entity.ToTable("Zona");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Ciutat)
-                .HasMaxLength(50)
+                .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("ciutat");
             entity.Property(e => e.ComunitatA)
-                .HasMaxLength(20)
+                .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("comunitat_a");
+            entity.Property(e => e.Estat).HasColumnName("estat");
             entity.Property(e => e.Pais)
-                .HasMaxLength(50)
+                .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("pais");
             entity.Property(e => e.Provincia)
-                .HasMaxLength(50)
+                .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("provincia");
 
@@ -290,14 +291,14 @@ public partial class EasydriveContext : DbContext
                     r => r.HasOne<Usuari>().WithMany()
                         .HasForeignKey("IdTaxista")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__ZonaUsuar__id_ta__5070F446"),
+                        .HasConstraintName("FK__ZonaUsuar__id_ta__5165187F"),
                     l => l.HasOne<Zona>().WithMany()
                         .HasForeignKey("IdZona")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__ZonaUsuar__id_zo__4F7CD00D"),
+                        .HasConstraintName("FK__ZonaUsuar__id_zo__5070F446"),
                     j =>
                     {
-                        j.HasKey("IdZona", "IdTaxista").HasName("PK__ZonaUsua__C6A9E9F2EDC334BB");
+                        j.HasKey("IdZona", "IdTaxista").HasName("PK__ZonaUsua__C6A9E9F2D81C40ED");
                         j.ToTable("ZonaUsuari");
                         j.IndexerProperty<int>("IdZona").HasColumnName("id_zona");
                         j.IndexerProperty<string>("IdTaxista")

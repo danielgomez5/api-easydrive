@@ -21,7 +21,7 @@ namespace APIProjecte.Controllers
                 string jsonData = File.ReadAllText(rutaJson);
 
 
-                List <Comunidad> comunidades = JsonConvert.DeserializeObject<List<Comunidad>>(jsonData);
+                List<Comunidad> comunidades = JsonConvert.DeserializeObject<List<Comunidad>>(jsonData);
 
                 if (comunidades != null)
                 {
