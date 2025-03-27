@@ -106,5 +106,35 @@ namespace APIProjecte.Controllers
         {
             return _context.Viatges.Any(e => e.Id == id);
         }
+
+        /******* Mètodes per defecte acabats *******/
+
+        /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/viatge-reserva/id
+        [Route("api/viatge-reserva/{id}")]
+        [HttpGet]
+        public async Task<ActionResult<Viatge>> GetViatgeByReserva(int id)
+        {
+            Reserva r = _context.Reservas
+                .Include(x => x.Viatges)
+                .Where(x => x.Id == id).FirstOrDefault();
+
+            if (r != null)
+            {
+                Viatge viatge = r.Viatges.Where(x => x.IdReserva == r.Id).FirstOrDefault();
+
+                if (viatge != null)
+                {
+                    return viatge;
+                }
+
+                return NotFound("No s'ha trobat cap viatge associat a aquesta reserva...");
+            }
+
+            return NotFound("Número de reserva no trobat");
+        }
+
+
     }
 }

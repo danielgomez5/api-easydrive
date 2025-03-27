@@ -106,5 +106,61 @@ namespace APIProjecte.Controllers
         {
             return _context.Reservas.Any(e => e.Id == id);
         }
+
+        /******* Mètodes per defecte acabats *******/
+
+        /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/reserves-usuari/id_usuari
+        [Route("api/reserves-usuari/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Reserva>>> GetAllReservesByUser(string id_usuari)
+        {
+            Usuari client = _context.Usuaris
+                .Include(x => x.Reservas).ThenInclude(x => x.Viatges)
+                .Where(x => x.Dni.Equals(id_usuari)).FirstOrDefault();
+
+            if (client != null)
+            {
+                List<Reserva> reserves = client.Reservas
+               .Where(r => r.IdUsuari == client.Dni)
+               .ToList();
+
+                if (reserves != null)
+                {
+                    return reserves;
+                }
+
+                return NotFound("No s'han trobat reserves associades a aquest client");
+            }
+            
+            return NotFound("Usuari no trobat...");
+        }
+
+        // GET: api/viatges-usuari/id_usuari
+        [Route("api/viatges-usuari/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Reserva>>> GetAllViatgesByUser(string id_usuari)
+        {
+            Usuari client = _context.Usuaris
+               .Include(x => x.Reservas).ThenInclude(r => r.Estat)
+               .Include(x => x.Reservas).ThenInclude(r => r.Viatges)
+               .Where(x => x.Dni.Equals(id_usuari)).FirstOrDefault();
+
+            if (client != null)
+            {
+                // L'estat 3 és igual a Realitzada
+                List<Reserva> reserves = client.Reservas.Where(r => r.IdUsuari == client.Dni && r.IdEstat == 3).ToList();
+
+                if (reserves != null)
+                {
+                    return reserves;
+                }
+
+                return NotFound("No s'han trobat reserves associades a aquest client");
+            }
+
+            return NotFound("Usuari no trobat...");
+        }
     }
 }

@@ -120,5 +120,39 @@ namespace APIProjecte.Controllers
         {
             return _context.Cotxes.Any(e => e.Matricula == id);
         }
+
+
+        /******* Mètodes per defecte acabats *******/
+
+        /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/cotxes-taxista/id_taxista
+        [Route("api/cotxes-taxista/{id_taxista}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Cotxe>>> GetCotxesByTaxista(string id_taxista)
+        {
+            List<Cotxe> cotxes = new List<Cotxe>();
+
+            Usuari taxista = _context.Usuaris
+                .Include(x => x.Matriculas)
+                .Where(x => x.Dni.Equals(id_taxista)).FirstOrDefault();
+
+
+            if (taxista != null)
+            {
+                cotxes = taxista.Matriculas.ToList();
+
+                if (cotxes != null)
+                {
+                    return cotxes;
+                }
+                
+                return NotFound("Aquest taxista no té cotxes registrats...");
+            }
+         
+
+            return NotFound("Taxista no trobat");
+        }
+
     }
 }

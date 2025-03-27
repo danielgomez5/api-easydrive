@@ -120,5 +120,94 @@ namespace APIProjecte.Controllers
         {
             return _context.Usuaris.Any(e => e.Dni == id);
         }
+
+        /******* Mètodes per defecte acabats *******/
+
+        /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/usuaris-client
+        [Route("api/usuaris-client")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuari>>> GetUsuarisClient()
+        {
+            List<Usuari> clients = new List<Usuari>();
+
+            clients = _context.Usuaris
+                .Include(x => x.DadesPagaments)
+                .Include(x => x.Reservas)
+                .Where(x => x.Rol == false).ToList();
+
+            if (clients != null)
+            {
+                return clients;
+            }
+
+            return NotFound("No s'han trobat usuaris");
+        }
+
+        // GET: api/usuaris-taxista
+        [Route("api/usuaris-taxista")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuari>>> GetUsuarisTaxista()
+        {
+            List<Usuari> taxistes = new List<Usuari>();
+
+            taxistes = _context.Usuaris
+                .Include(x => x.Matriculas)
+                .Include(x => x.Viatges)
+                .Where(x => x.Rol == true).ToList();
+
+            if (taxistes != null)
+            {
+                return taxistes;
+            }
+
+            return NotFound("No s'han trobat taxistes");
+        }
+
+        // GET: api/usuari-pagaments/id_usuari
+        [Route("api/usuari-pagaments/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<List<DadesPagament>>> GetDadesPagamentByUsuari(string id_usuari)
+        {
+            Usuari client = _context.Usuaris
+                .Include(x => x.DadesPagaments)
+                .Where(x => x.Dni.Equals(id_usuari)).FirstOrDefault();
+
+            if (client != null)
+            {
+                List<DadesPagament> dp = client.DadesPagaments.ToList();
+
+                if (dp != null)
+                {
+                    return dp;
+                }
+                else
+                {
+                    return NotFound("No s'han trobat dades de pagament associades a aquest usuari...");
+                }
+            }
+            else
+            {
+                return NotFound("Usuari no trobat");
+            }
+        }
+
+        // GET: api/taxistes-top5
+        [Route("api/taxistes-top5")]
+        [HttpGet]
+        public async Task<ActionResult<List<Usuari>>> GetTop5Taxistes()
+        {
+            List<Usuari> taxistes = _context.Usuaris
+                .Include(x => x.Viatges)
+                .Where(x => x.Rol == true).OrderByDescending(x => x.Viatges).ToList();
+
+            if (taxistes != null)
+            {
+                return taxistes;
+            }
+
+            return NotFound("No s'han trobat taxistes"); 
+        }
     }
 }

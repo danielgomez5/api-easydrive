@@ -106,5 +106,83 @@ namespace APIProjecte.Controllers
         {
             return _context.Zonas.Any(e => e.Id == id);
         }
+
+        /******* Mètodes per defecte acabats *******/
+
+        /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/zona-viatges/id_zona
+        [Route("api/zona-viatges/{id_zona}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Viatge>>> GetViatgesByZona(int id_zona)
+        {
+            Zona z = _context.Zonas
+                .Include(x => x.Viatges)
+                .Where(x => x.Id == id_zona).FirstOrDefault();
+
+            if (z != null)
+            {
+                List<Viatge> viatges = z.Viatges.Where(x => x.IdZona == z.Id).ToList();
+
+                if (viatges != null)
+                {
+                    return viatges;
+                }
+
+                return NotFound($"Encara no hi ha viatges registrats a {z.Ciutat}...");
+            }
+
+            return NotFound("Zona no trobada...");
+        }
+
+
+        // GET: api/zona-clients/id_zona
+        [Route("api/zona-clients/{id_zona}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Usuari>>> GetClientsByZona(int id_zona)
+        {
+            Zona z = _context.Zonas
+                .Include(x => x.Usuaris)
+                .Where(x => x.Id == id_zona).FirstOrDefault();
+
+            if (z != null)
+            {
+                List<Usuari> clients = z.Usuaris.Where(x => x.Rol == false).ToList();
+
+                if (clients != null)
+                {
+                    return clients;
+                }
+
+                return NotFound($"Encara no hi ha clients registrats a {z.Ciutat}...");
+            }
+
+            return NotFound("Zona no trobada...");
+        }
+
+
+        // GET: api/zona-taxistes/id_zona
+        [Route("api/zona-taxistes/{id_zona}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Usuari>>> GetTaxistesByZona(int id_zona)
+        {
+            Zona z = _context.Zonas
+                .Include(x => x.Usuaris)
+                .Where(x => x.Id == id_zona).FirstOrDefault();
+
+            if (z != null)
+            {
+                List<Usuari> clients = z.Usuaris.Where(x => x.Rol == true).ToList();
+
+                if (clients != null)
+                {
+                    return clients;
+                }
+
+                return NotFound($"Encara no hi ha taxistes registrats a {z.Ciutat}...");
+            }
+
+            return NotFound("Zona no trobada...");
+        }
     }
 }
