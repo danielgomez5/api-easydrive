@@ -14,14 +14,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EasydriveContext>();
 var app = builder.Build();
 
-
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<EasydriveContext>();
-    var importador = new ObtenirZones(dbContext);
-    importador.ImportarDatosDesdeJson("arbol.json");
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -36,6 +28,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-// HOla
