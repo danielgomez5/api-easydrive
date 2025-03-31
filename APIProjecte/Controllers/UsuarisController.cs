@@ -77,7 +77,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/usuari")]
         [HttpPost]
-        public async Task<ActionResult<Usuari>> PostUsuari(Usuari usuari)
+        public async Task<ActionResult<Usuari>> PostUsuari([FromBody] Usuari usuari)
         {
             _context.Usuaris.Add(usuari);
             try

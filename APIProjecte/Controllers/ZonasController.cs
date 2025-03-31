@@ -154,7 +154,7 @@ namespace APIProjecte.Controllers
                     return clients;
                 }
 
-                return NotFound($"Encara no hi ha clients registrats a {z.Ciutat}...");
+                return new List<Usuari>();
             }
 
             return NotFound("Zona no trobada...");
@@ -179,10 +179,31 @@ namespace APIProjecte.Controllers
                     return clients;
                 }
 
-                return NotFound($"Encara no hi ha taxistes registrats a {z.Ciutat}...");
+                return new List<Usuari>();
             }
 
             return NotFound("Zona no trobada...");
+        }
+
+        // GET: api/zones/filtre/filtrePer
+        [Route("api/zones/{filtre}/{filtraPer}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasFiltre(string filtre, int filtraPer)
+        {
+            if (filtraPer == 1)
+            {
+                return await _context.Zonas.Where(x => x.ComunitatA.Contains(filtre)).ToListAsync();
+            } 
+            else if (filtraPer == 2)
+            {
+                return await _context.Zonas.Where(x => x.Ciutat.Contains(filtre)).ToListAsync();
+            }
+            else if (filtraPer == 3)
+            {
+                return await _context.Zonas.Where(x => x.Provincia.Contains(filtre)).ToListAsync();
+            }
+
+            return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
     }
 }
