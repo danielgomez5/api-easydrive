@@ -26,34 +26,6 @@ namespace APIProjecte.Controllers
             return await _context.Zonas.ToListAsync();
         }
 
-        // GET: api/zones_comunitats
-        [Route("api/zones_comunitats")]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<String>>> GetZonasXComunitat()
-        {
-            var zona = _context.Zonas.Select(x=>x.ComunitatA).Distinct().ToListAsync();
-            if (zona == null)
-            {
-                return NotFound();
-            }
-
-            return await zona;
-        }
-
-        // GET: api/zones_ciutat/comunitat
-        [Route("api/zones_ciutat/{comunitat}")]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasCiutatXComunitat(string comunitat)
-        {
-            var zona = _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
-            if (zona == null)
-            {
-                return NotFound();
-            }
-
-            return await zona;
-        }
-
         // GET: api/zona/id
         [Route("api/zona/{id}")]
         [HttpGet]
@@ -73,7 +45,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/zona/{id}")]
         [HttpPut]
-        public async Task<IActionResult> PutZona(int id, Zona zona)
+        public async Task<IActionResult> PutZona(int id, [FromBody]Zona zona)
         {
             if (id != zona.Id)
             {
@@ -98,7 +70,7 @@ namespace APIProjecte.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(zona);
         }
 
         // POST: api/zona
@@ -138,6 +110,30 @@ namespace APIProjecte.Controllers
         /******* Mètodes per defecte acabats *******/
 
         /******* Inici de mètodes personalitzats *******/
+
+        // GET: api/zones_comunitats
+        [Route("api/zones_comunitats")]
+        [HttpGet]
+        public async Task<IEnumerable<string>> GetZonasXComunitat()
+        {
+            var zones = _context.Zonas.Select(x => x.ComunitatA).Distinct().ToListAsync();
+
+            return await zones;
+        }
+
+        // GET: api/zones_ciutat/comunitat
+        [Route("api/zones_ciutat/{comunitat}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Zona>>> GetZonasCiutatXComunitat(string comunitat)
+        {
+            var zona = _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
+            if (zona == null)
+            {
+                return NotFound();
+            }
+
+            return await zona;
+        }
 
         // GET: api/zona-viatges/id_zona
         [Route("api/zona-viatges/{id_zona}")]
