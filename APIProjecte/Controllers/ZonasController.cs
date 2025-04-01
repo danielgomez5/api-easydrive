@@ -26,6 +26,34 @@ namespace APIProjecte.Controllers
             return await _context.Zonas.ToListAsync();
         }
 
+        // GET: api/zones_comunitats
+        [Route("api/zones_comunitats")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<String>>> GetZonasXComunitat()
+        {
+            var zona = _context.Zonas.Select(x=>x.ComunitatA).Distinct().ToListAsync();
+            if (zona == null)
+            {
+                return NotFound();
+            }
+
+            return await zona;
+        }
+
+        // GET: api/zones_ciutat/comunitat
+        [Route("api/zones_ciutat/{comunitat}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasCiutatXComunitat(string comunitat)
+        {
+            var zona = _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
+            if (zona == null)
+            {
+                return NotFound();
+            }
+
+            return await zona;
+        }
+
         // GET: api/zona/id
         [Route("api/zona/{id}")]
         [HttpGet]
