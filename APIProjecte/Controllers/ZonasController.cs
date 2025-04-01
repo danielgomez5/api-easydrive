@@ -124,15 +124,15 @@ namespace APIProjecte.Controllers
         // GET: api/zones_ciutat/comunitat
         [Route("api/zones_ciutat/{comunitat}")]
         [HttpGet]
-        public async Task<ActionResult<List<Zona>>> GetZonasCiutatXComunitat(string comunitat)
+        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasCiutatXComunitat(string comunitat)
         {
-            var zona = _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
+            var zona = await _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
             if (zona == null)
             {
                 return NotFound();
             }
 
-            return await zona;
+            return zona;
         }
 
         // GET: api/zona-viatges/id_zona
