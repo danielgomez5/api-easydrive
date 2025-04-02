@@ -77,31 +77,9 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/usuari")]
         [HttpPost]
-        public async Task<ActionResult<Usuari>> PostUsuari(
-        Usuari usuari,
-        IFormFile? f_perfil,
-        IFormFile? f_tecnica)
+        public async Task<ActionResult<Usuari>> PostUsuari([FromBody]Usuari usuari)
         {
-            if (f_perfil != null)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await f_perfil.CopyToAsync(memoryStream);
-                    usuari.FotoPerfil = memoryStream.ToArray();
-                }
-            }
-
-            if (f_tecnica != null)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await f_tecnica.CopyToAsync(memoryStream);
-                    usuari.FotoCarnet = memoryStream.ToArray();
-                }
-            }
-
             _context.Usuaris.Add(usuari);
-
             try
             {
                 await _context.SaveChangesAsync();
@@ -190,7 +168,7 @@ namespace APIProjecte.Controllers
         // GET: api/usuari-pagaments/id_usuari
         [Route("api/usuari-pagaments/{id_usuari}")]
         [HttpGet]
-        public async Task<ActionResult<List<DadesPagament>>> GetDadesPagamentByUsuari(string id_usuari)
+        public async Task<ActionResult<DadesPagament>> GetDadesPagamentByUsuari(string id_usuari)
         {
             Usuari client = _context.Usuaris
                 .Include(x => x.DadesPagaments)
@@ -198,7 +176,7 @@ namespace APIProjecte.Controllers
 
             if (client != null)
             {
-                List<DadesPagament> dp = client.DadesPagaments.ToList();
+                DadesPagament dp = client.DadesPagaments.FirstOrDefault();
 
                 if (dp != null)
                 {
@@ -206,7 +184,7 @@ namespace APIProjecte.Controllers
                 }
                 else
                 {
-                    return NotFound("No s'han trobat dades de pagament associades a aquest usuari...");
+                    return null;
                 }
             }
             else
@@ -230,6 +208,23 @@ namespace APIProjecte.Controllers
             }
 
             return NotFound("No s'han trobat taxistes"); 
+        }
+
+        // GET: api/usuaris/filtre/filtrePer
+        [Route("api/usuaris/{filtre}/{filtraPer}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuari>>> GetUsuarisFiltre(string filtre, int filtraPer)
+        {
+            if (filtraPer == 1)
+            {
+                return await _context.Usuaris.Where(x => x.Dni.StartsWith(filtre)).ToListAsync();
+            }
+            else if (filtraPer == 2)
+            {
+                return await _context.Usuaris.Where(x => x.Nom.Contains(filtre)).ToListAsync();
+            }
+
+            return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
     }
 }
