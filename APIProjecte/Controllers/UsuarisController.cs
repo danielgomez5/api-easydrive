@@ -226,5 +226,54 @@ namespace APIProjecte.Controllers
 
             return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
+
+        [Route("api/usuari_image/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
+        {
+            var user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
+
+            if (user != null) 
+            {
+                return NotFound();
+            }
+
+            if (f_perfil != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await f_perfil.CopyToAsync(memoryStream);  // Leer el archivo en memoria
+                    user.FotoPerfil = memoryStream.ToArray();  // Convertir el archivo a byte[]
+                }
+            }
+
+            if (f_tecnica != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await f_tecnica.CopyToAsync(memoryStream);  // Leer el archivo en memoria
+                    user.FotoCarnet = memoryStream.ToArray();  // Convertir el archivo a byte[]
+                }
+            }
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UsuariExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
     }
 }
