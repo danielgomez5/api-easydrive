@@ -77,9 +77,31 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/usuari")]
         [HttpPost]
-        public async Task<ActionResult<Usuari>> PostUsuari([FromBody] Usuari usuari)
+        public async Task<ActionResult<Usuari>> PostUsuari(
+        Usuari usuari,
+        IFormFile? f_perfil,
+        IFormFile? f_tecnica)
         {
+            if (f_perfil != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await f_perfil.CopyToAsync(memoryStream);
+                    usuari.FotoPerfil = memoryStream.ToArray();
+                }
+            }
+
+            if (f_tecnica != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await f_tecnica.CopyToAsync(memoryStream);
+                    usuari.FotoCarnet = memoryStream.ToArray();
+                }
+            }
+
             _context.Usuaris.Add(usuari);
+
             try
             {
                 await _context.SaveChangesAsync();
