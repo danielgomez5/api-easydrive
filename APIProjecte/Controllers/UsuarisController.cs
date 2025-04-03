@@ -231,9 +231,9 @@ namespace APIProjecte.Controllers
         [HttpPut]
         public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
         {
-            var user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
+            Usuari user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
 
-            if (user != null) 
+            if (user == null) 
             {
                 return NotFound();
             }
