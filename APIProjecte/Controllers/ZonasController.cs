@@ -116,17 +116,31 @@ namespace APIProjecte.Controllers
         [HttpGet]
         public async Task<IEnumerable<string>> GetZonasXComunitat()
         {
-            var zones = _context.Zonas.Select(x => x.ComunitatA).Distinct().ToListAsync();
+            var zones = _context.Zonas.OrderBy(x=>x.ComunitatA).Select(x => x.ComunitatA).Distinct().ToListAsync();
 
             return await zones;
         }
 
         // GET: api/zones_ciutat/comunitat
-        [Route("api/zones_ciutat/{comunitat}")]
+        [Route("api/zones_provincia/{comunitat}")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasCiutatXComunitat(string comunitat)
+        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasProvinciaXComunitat(string comunitat)
         {
-            var zona = await _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).ToListAsync();
+            var zona = await _context.Zonas.Where(x => x.ComunitatA.Equals(comunitat)).OrderBy(x => x.Provincia).ToListAsync();
+            if (zona == null)
+            {
+                return NotFound();
+            }
+
+            return zona;
+        }
+
+        // GET: api/zones_ciutat/comunitat
+        [Route("api/zones_ciutat/{provincia}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Zona>>> GetZonasCiutatXProvincia(string provincia)
+        {
+            var zona = await _context.Zonas.Where(x => x.Provincia.Equals(provincia)).OrderBy(x=>x.Ciutat).ToListAsync();
             if (zona == null)
             {
                 return NotFound();
