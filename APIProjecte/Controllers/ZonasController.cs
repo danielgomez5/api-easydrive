@@ -238,5 +238,39 @@ namespace APIProjecte.Controllers
 
             return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
+
+        // PUT: api/zona/id
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Route("api/zona_habilitada/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutZonaHabilitada(int id)
+        {
+            Zona zona = _context.Zonas.Where(x => x.Id == id).FirstOrDefault();
+
+            if (id != zona.Id)
+            {
+                return BadRequest();
+            }
+
+            zona.Estat = true;
+            _context.Entry(zona).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ZonaExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return Ok(zona);
+        }
     }
 }
