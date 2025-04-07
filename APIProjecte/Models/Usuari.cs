@@ -25,7 +25,7 @@ public partial class Usuari
 
     public bool? Rol { get; set; }
 
-    public DateTime? Horari { get; set; }
+    public string? Horari { get; set; }
 
     public bool? Disponibilitat { get; set; }
 

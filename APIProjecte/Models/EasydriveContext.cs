@@ -168,7 +168,8 @@ public partial class EasydriveContext : DbContext
             entity.Property(e => e.FotoCarnet).HasColumnName("foto_carnet");
             entity.Property(e => e.FotoPerfil).HasColumnName("foto_perfil");
             entity.Property(e => e.Horari)
-                .HasColumnType("datetime")
+                .HasMaxLength(255)
+                .IsUnicode(false)
                 .HasColumnName("horari");
             entity.Property(e => e.IdZona).HasColumnName("id_zona");
             entity.Property(e => e.Nom)

@@ -100,11 +100,11 @@ namespace APIProjecte.Controllers
         }
 
         // DELETE: api/usuari/id
-        [Route("api/usuari/{id}")]
+        [Route("api/usuari/{id_usuari}")]
         [HttpDelete]
-        public async Task<IActionResult> DeleteUsuari(string id)
+        public async Task<IActionResult> DeleteUsuari(string id_usuari)
         {
-            var usuari = await _context.Usuaris.FindAsync(id);
+            var usuari = await _context.Usuaris.FindAsync(id_usuari);
             if (usuari == null)
             {
                 return NotFound();

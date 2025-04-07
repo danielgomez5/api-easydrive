@@ -144,6 +144,7 @@ namespace APIProjecte.Controllers
             Usuari client = _context.Usuaris
                 .Include(x => x.Reservas)
                     .ThenInclude(r => r.Viatges)
+                    .ThenInclude(v => v.IdTaxistaNavigation)
                 .Where(x => x.Dni.Equals(id_usuari))
                 .FirstOrDefault();
 
