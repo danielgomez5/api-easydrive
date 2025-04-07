@@ -21,7 +21,7 @@ public partial class Cotxe
 
     public double? HoresTreballades { get; set; }
 
-    public byte[] FotoFitxaTecnica { get; set; } = null!;
+    public string? FotoFitxaTecnica { get; set; }
 
     public virtual ICollection<Viatge> Viatges { get; set; } = new List<Viatge>();
 

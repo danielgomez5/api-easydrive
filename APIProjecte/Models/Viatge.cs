@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace APIProjecte.Models;
 
@@ -24,12 +23,10 @@ public partial class Viatge
 
     public string? IdCotxe { get; set; }
 
-    [JsonIgnore]
     public virtual Cotxe? IdCotxeNavigation { get; set; }
 
     public virtual Reserva? IdReservaNavigation { get; set; }
 
-    [JsonIgnore]
     public virtual Usuari? IdTaxistaNavigation { get; set; }
 
     public virtual Zona? IdZonaNavigation { get; set; }

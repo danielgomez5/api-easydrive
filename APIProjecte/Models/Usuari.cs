@@ -19,9 +19,9 @@ public partial class Usuari
 
     public string PasswordHash { get; set; } = null!;
 
-    public byte[]? FotoPerfil { get; set; }
+    public string? FotoPerfil { get; set; }
 
-    public byte[]? FotoCarnet { get; set; }
+    public string? FotoCarnet { get; set; }
 
     public bool? Rol { get; set; }
 

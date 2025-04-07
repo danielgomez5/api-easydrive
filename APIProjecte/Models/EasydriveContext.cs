@@ -51,7 +51,9 @@ public partial class EasydriveContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("color");
-            entity.Property(e => e.FotoFitxaTecnica).HasColumnName("foto_fitxa_tecnica");
+            entity.Property(e => e.FotoFitxaTecnica)
+                .IsUnicode(false)
+                .HasColumnName("foto_fitxa_tecnica");
             entity.Property(e => e.HoresTreballades).HasColumnName("hores_treballades");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
@@ -165,8 +167,12 @@ public partial class EasydriveContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("email");
-            entity.Property(e => e.FotoCarnet).HasColumnName("foto_carnet");
-            entity.Property(e => e.FotoPerfil).HasColumnName("foto_perfil");
+            entity.Property(e => e.FotoCarnet)
+                .IsUnicode(false)
+                .HasColumnName("foto_carnet");
+            entity.Property(e => e.FotoPerfil)
+                .IsUnicode(false)
+                .HasColumnName("foto_perfil");
             entity.Property(e => e.Horari)
                 .HasMaxLength(255)
                 .IsUnicode(false)
