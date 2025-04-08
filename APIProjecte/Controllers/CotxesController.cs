@@ -23,7 +23,7 @@ namespace APIProjecte.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cotxe>>> GetCotxes()
         {
-            return await _context.Cotxes.ToListAsync();
+            return await _context.Cotxes.Include(x => x.IdUsuaris).ToListAsync();
         }
 
         // GET: api/cotxe/id
@@ -154,47 +154,64 @@ namespace APIProjecte.Controllers
             return NotFound("Taxista no trobat");
         }
 
-        // PUT: api/cotxe/id
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Route("api/cotxe_ftecnic/{id}")]
-        [HttpPut]
-        public async Task<IActionResult> PutCotxeFitxaTecnica(string id, IFormFile f_tecnic)
+        // GET: api/cotxes/filtre/filtrePer
+        [Route("api/cotxes/{filtre}/{filtraPer}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Cotxe>>> GetCotxesFiltre(string filtre, int filtraPer)
         {
-            Cotxe cotxe  = _context.Cotxes.Where(x=>x.Matricula == id).FirstOrDefault(); 
-            if (cotxe == null)
+            if (filtraPer == 1)
             {
-                return NotFound();
+                return await _context.Cotxes.Where(x => x.Matricula.StartsWith(filtre)).OrderBy(x => x.Matricula).ToListAsync();
+            }
+            else if (filtraPer == 2)
+            {
+                return await _context.Cotxes.Where(x => x.Marca.StartsWith(filtre)).OrderBy(x => x.Marca).ThenBy(x => x.Model).ToListAsync();
             }
 
-            if (f_tecnic != null)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await f_tecnic.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-                    cotxe.FotoFitxaTecnica = memoryStream.ToArray();  // Convertir el archivo a byte[]
-                }
-            }
-
-            _context.Entry(cotxe).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CotxeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
+
+        // PUT: api/cotxe/id
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[Route("api/cotxe_ftecnic/{id}")]
+        //[HttpPut]
+        //public async Task<IActionResult> PutCotxeFitxaTecnica(string id, IFormFile f_tecnic)
+        //{
+        //    Cotxe cotxe  = _context.Cotxes.Where(x=>x.Matricula == id).FirstOrDefault(); 
+        //    if (cotxe == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    if (f_tecnic != null)
+        //    {
+        //        using (var memoryStream = new MemoryStream())
+        //        {
+        //            await f_tecnic.CopyToAsync(memoryStream);  // Leer el archivo en memoria
+        //            cotxe.FotoFitxaTecnica = memoryStream.ToArray();  // Convertir el archivo a byte[]
+        //        }
+        //    }
+
+        //    _context.Entry(cotxe).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!CotxeExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return NoContent();
+        //}
 
     }
 }

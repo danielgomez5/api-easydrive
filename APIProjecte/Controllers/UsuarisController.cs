@@ -73,12 +73,52 @@ namespace APIProjecte.Controllers
             return NoContent();
         }
 
-        // POST: api/usuari
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/usuari")]
         [HttpPost]
-        public async Task<ActionResult<Usuari>> PostUsuari([FromBody]Usuari usuari)
+        public async Task<ActionResult<Usuari>> PostUsuari([FromBody] Usuari usuari)
         {
+            //Usuari usuari = new Usuari
+            //{
+            //    Dni = usuariDto.Dni,
+            //    Nom = usuariDto.Nom,
+            //    Cognom = usuariDto.Cognom,
+            //    Email = usuariDto.Email,
+            //    Telefon = usuariDto.Telefon,
+            //    DataNaixement = usuariDto.DataNaixement,
+            //    PasswordHash = usuariDto.PasswordHash,
+            //    Rol = usuariDto.Rol,
+            //    Horari = usuariDto.Horari,
+            //    Disponibilitat = usuariDto.Disponibilitat,
+            //    IdZona = usuariDto.IdZona
+            //};
+
+            //// Guardar imágenes en carpeta "Photos"
+            //if (usuariDto.FotoPerfil != null)
+            //{
+            //    var perfilFileName = $"{Guid.NewGuid()}_{usuariDto.FotoPerfil.FileName}";
+            //    var perfilPath = Path.Combine("Photos", perfilFileName);
+
+            //    using (var stream = new FileStream(perfilPath, FileMode.Create))
+            //    {
+            //        await usuariDto.FotoPerfil.CopyToAsync(stream);
+            //    }
+
+            //    usuari.FotoPerfil = perfilFileName;
+            //}
+
+            //if (usuariDto.FotoCarnet != null)
+            //{
+            //    var carnetFileName = $"{Guid.NewGuid()}_{usuariDto.FotoCarnet.FileName}";
+            //    var carnetPath = Path.Combine("Photos", carnetFileName);
+
+            //    using (var stream = new FileStream(carnetPath, FileMode.Create))
+            //    {
+            //        await usuariDto.FotoCarnet.CopyToAsync(stream);
+            //    }
+
+            //    usuari.FotoCarnet = carnetFileName;
+            //}
+
             _context.Usuaris.Add(usuari);
             try
             {
@@ -98,6 +138,7 @@ namespace APIProjecte.Controllers
 
             return CreatedAtAction("GetUsuari", new { id = usuari.Dni }, usuari);
         }
+
 
         // DELETE: api/usuari/id
         [Route("api/usuari/{id_usuari}")]
@@ -193,21 +234,20 @@ namespace APIProjecte.Controllers
             }
         }
 
-        // GET: api/taxistes-top5
         [Route("api/taxistes-top5")]
         [HttpGet]
-        public async Task<ActionResult<List<Usuari>>> GetTop5Taxistes()
+        public async Task<ActionResult<List<TaxistaDTO>>> GetTop5Taxistes()
         {
-            List<Usuari> taxistes = _context.Usuaris
+            List<Usuari> taxistes = await _context.Usuaris
                 .Include(x => x.Viatges)
-                .Where(x => x.Rol == true).OrderByDescending(x => x.Viatges).ToList();
+                .Where(x => x.Rol == true)
+                .OrderByDescending(x => x.Viatges.Count)
+                .Take(5)
+                .ToListAsync();
 
-            if (taxistes != null)
-            {
-                return taxistes;
-            }
+            List<TaxistaDTO> dtoList = taxistes.Select(t => new TaxistaDTO(t)).ToList();
 
-            return NotFound("No s'han trobat taxistes"); 
+            return dtoList;
         }
 
         // GET: api/usuaris/filtre/filtrePer
@@ -227,53 +267,53 @@ namespace APIProjecte.Controllers
             return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
 
-        [Route("api/usuari_image/{id}")]
-        [HttpPut]
-        public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
-        {
-            Usuari user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
+        //[Route("api/usuari_image/{id}")]
+        //[HttpPut]
+        //public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
+        //{
+        //    Usuari user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
 
-            if (user == null) 
-            {
-                return NotFound();
-            }
+        //    if (user == null) 
+        //    {
+        //        return NotFound();
+        //    }
 
-            if (f_perfil != null)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await f_perfil.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-                    user.FotoPerfil = memoryStream.ToArray();  // Convertir el archivo a byte[]
-                }
-            }
+        //    if (f_perfil != null)
+        //    {
+        //        using (var memoryStream = new MemoryStream())
+        //        {
+        //            await f_perfil.CopyToAsync(memoryStream);  // Leer el archivo en memoria
+        //            user.FotoPerfil = memoryStream.ToArray();  // Convertir el archivo a byte[]
+        //        }
+        //    }
 
-            if (f_tecnica != null)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    await f_tecnica.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-                    user.FotoCarnet = memoryStream.ToArray();  // Convertir el archivo a byte[]
-                }
-            }
-            _context.Entry(user).State = EntityState.Modified;
+        //    if (f_tecnica != null)
+        //    {
+        //        using (var memoryStream = new MemoryStream())
+        //        {
+        //            await f_tecnica.CopyToAsync(memoryStream);  // Leer el archivo en memoria
+        //            user.FotoCarnet = memoryStream.ToArray();  // Convertir el archivo a byte[]
+        //        }
+        //    }
+        //    _context.Entry(user).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuariExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!UsuariExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
     }
 }

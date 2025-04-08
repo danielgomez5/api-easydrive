@@ -133,38 +133,17 @@ namespace APIProjecte.Controllers
 
                 return NotFound("No s'han trobat reserves associades a aquest client");
             }
-            
+
             return NotFound("Usuari no trobat...");
         }
 
-        [Route("api/viatges-usuari/{id_usuari}")]
+
+        // GET: api/reserves-pendents
+        [Route("api/reserves-pendents")]
         [HttpGet]
-        public async Task<ActionResult<List<Viatge>>> GetAllViatgesByUser(string id_usuari)
+        public async Task<ActionResult<IEnumerable<Reserva>>> GetReservesPendents()
         {
-            Usuari client = _context.Usuaris
-                .Include(x => x.Reservas)
-                    .ThenInclude(r => r.Viatges)
-                    .ThenInclude(v => v.IdTaxistaNavigation)
-                .Where(x => x.Dni.Equals(id_usuari))
-                .FirstOrDefault();
-
-            if (client == null)
-            {
-                return NotFound("Usuari no trobat...");
-            }
-
-            // Obtener los viajes directamente
-            List<Viatge> viatges = client.Reservas
-                .Where(r => r.IdEstat == 3) // Estado 3 = Realizada
-                .SelectMany(r => r.Viatges)
-                .ToList();
-
-            if (viatges.Any())
-            {
-                return viatges;
-            }
-
-            return new List<Viatge>();
+            return await _context.Reservas.Where(x => x.IdEstat == 2).ToListAsync();
         }
     }
 }

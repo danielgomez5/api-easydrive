@@ -135,6 +135,35 @@ namespace APIProjecte.Controllers
             return NotFound("Número de reserva no trobat");
         }
 
+        [Route("api/viatges-usuari/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Viatge>>> GetAllViatgesByUser(string id_usuari)
+        {
+            Usuari client = _context.Usuaris
+                .Include(x => x.Reservas)
+                    .ThenInclude(r => r.Viatges)
+                    .ThenInclude(v => v.IdTaxistaNavigation)
+                .Where(x => x.Dni.Equals(id_usuari))
+                .FirstOrDefault();
+
+            if (client == null)
+            {
+                return NotFound("Usuari no trobat...");
+            }
+
+            // Obtener los viajes directamente
+            List<Viatge> viatges = client.Reservas
+                .Where(r => r.IdEstat == 3) // Estado 3 = Realizada
+                .SelectMany(r => r.Viatges)
+                .ToList();
+
+            if (viatges.Any())
+            {
+                return viatges;
+            }
+
+            return new List<Viatge>();
+        }
 
     }
 }

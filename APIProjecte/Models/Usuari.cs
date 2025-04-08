@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace APIProjecte.Models;
 
 public partial class Usuari
 {
+    [Key]
     public string Dni { get; set; } = null!;
 
     public string Nom { get; set; } = null!;
