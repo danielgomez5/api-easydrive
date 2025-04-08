@@ -173,45 +173,49 @@ namespace APIProjecte.Controllers
 
         // PUT: api/cotxe/id
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[Route("api/cotxe_ftecnic/{id}")]
-        //[HttpPut]
-        //public async Task<IActionResult> PutCotxeFitxaTecnica(string id, IFormFile f_tecnic)
-        //{
-        //    Cotxe cotxe  = _context.Cotxes.Where(x=>x.Matricula == id).FirstOrDefault(); 
-        //    if (cotxe == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [Route("api/cotxe_ftecnic/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutCotxeFitxaTecnica(string id, IFormFile f_tecnic)
+        {
+            Cotxe cotxe = _context.Cotxes.Where(x => x.Matricula == id).FirstOrDefault();
+            if (cotxe == null)
+            {
+                return NotFound();
+            }
 
-        //    if (f_tecnic != null)
-        //    {
-        //        using (var memoryStream = new MemoryStream())
-        //        {
-        //            await f_tecnic.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-        //            cotxe.FotoFitxaTecnica = memoryStream.ToArray();  // Convertir el archivo a byte[]
-        //        }
-        //    }
+            if (f_tecnic != null)
+            {
+                var perfilFileName = $"{Guid.NewGuid()}_{f_tecnic.FileName}";
+                var perfilPath = Path.Combine("Files", perfilFileName);
 
-        //    _context.Entry(cotxe).State = EntityState.Modified;
+                using (var stream = new FileStream(perfilPath, FileMode.Create))
+                {
+                    await f_tecnic.CopyToAsync(stream);
+                }
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!CotxeExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+                cotxe.FotoFitxaTecnica = perfilFileName;
+            }
 
-        //    return NoContent();
-        //}
+            _context.Entry(cotxe).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CotxeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
 
     }
 }

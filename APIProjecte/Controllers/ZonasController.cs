@@ -247,9 +247,9 @@ namespace APIProjecte.Controllers
         {
             Zona zona = _context.Zonas.Where(x => x.Id == id).FirstOrDefault();
 
-            if (id != zona.Id)
+            if (zona == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             zona.Estat = true;
