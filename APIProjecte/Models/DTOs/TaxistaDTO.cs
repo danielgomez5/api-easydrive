@@ -1,4 +1,4 @@
-﻿namespace APIProjecte.Models
+﻿namespace APIProjecte.Models.DTOs
 {
     public class TaxistaDTO
     {
@@ -9,10 +9,10 @@
 
         public TaxistaDTO(Usuari u)
         {
-            this.DNI = u.Dni;
-            this.Nom = u.Nom;
-            this.Cognom = u.Cognom;
-            this.ViatgesRealitzats = u.Viatges?.Count ?? 0;
+            DNI = u.Dni;
+            Nom = u.Nom;
+            Cognom = u.Cognom;
+            ViatgesRealitzats = u.Viatges?.Count ?? 0;
         }
     }
 }

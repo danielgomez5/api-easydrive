@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIProjecte.Models;
+using APIProjecte.Models.DTOs;
 
 namespace APIProjecte.Controllers
 {
@@ -276,9 +277,20 @@ namespace APIProjecte.Controllers
         // GET: api/top-zones
         [Route("api/top-zones")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Zona>>> GetTopZones()
+        public async Task<ActionResult<IEnumerable<ZonaDTO>>> GetTopZones()
         {
-            return await _context.Zonas.Include(x => x.Viatges).OrderByDescending(x => x.Viatges.Count).Take(10).ToListAsync();
+            List<ZonaDTO> result = await _context.Zonas
+                .Include(z => z.Viatges).Where(x => x.Viatges.Count > 0)
+                .Select(z => new ZonaDTO
+                {
+                    NomZona = z.Ciutat + " (" + z.Provincia + ")",
+                    NumViatges = z.Viatges.Count
+                })
+                .OrderByDescending(z => z.NumViatges)
+                .Take(5)
+                .ToListAsync();
+
+            return result;
         }
     }
 }

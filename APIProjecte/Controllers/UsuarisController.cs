@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIProjecte.Models;
+using APIProjecte.Models.DTOs;
 
 namespace APIProjecte.Controllers
 {
@@ -77,47 +78,6 @@ namespace APIProjecte.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuari>> PostUsuari([FromBody] Usuari usuari)
         {
-            //Usuari usuari = new Usuari
-            //{
-            //    Dni = usuariDto.Dni,
-            //    Nom = usuariDto.Nom,
-            //    Cognom = usuariDto.Cognom,
-            //    Email = usuariDto.Email,
-            //    Telefon = usuariDto.Telefon,
-            //    DataNaixement = usuariDto.DataNaixement,
-            //    PasswordHash = usuariDto.PasswordHash,
-            //    Rol = usuariDto.Rol,
-            //    Horari = usuariDto.Horari,
-            //    Disponibilitat = usuariDto.Disponibilitat,
-            //    IdZona = usuariDto.IdZona
-            //};
-
-            //// Guardar imágenes en carpeta "Photos"
-            //if (usuariDto.FotoPerfil != null)
-            //{
-            //    var perfilFileName = $"{Guid.NewGuid()}_{usuariDto.FotoPerfil.FileName}";
-            //    var perfilPath = Path.Combine("Photos", perfilFileName);
-
-            //    using (var stream = new FileStream(perfilPath, FileMode.Create))
-            //    {
-            //        await usuariDto.FotoPerfil.CopyToAsync(stream);
-            //    }
-
-            //    usuari.FotoPerfil = perfilFileName;
-            //}
-
-            //if (usuariDto.FotoCarnet != null)
-            //{
-            //    var carnetFileName = $"{Guid.NewGuid()}_{usuariDto.FotoCarnet.FileName}";
-            //    var carnetPath = Path.Combine("Photos", carnetFileName);
-
-            //    using (var stream = new FileStream(carnetPath, FileMode.Create))
-            //    {
-            //        await usuariDto.FotoCarnet.CopyToAsync(stream);
-            //    }
-
-            //    usuari.FotoCarnet = carnetFileName;
-            //}
 
             _context.Usuaris.Add(usuari);
             try
@@ -250,18 +210,35 @@ namespace APIProjecte.Controllers
             return dtoList;
         }
 
-        // GET: api/usuaris/filtre/filtrePer
-        [Route("api/usuaris/{filtre}/{filtraPer}")]
+        // GET: api/usuaris-client/filtre/filtrePer
+        [Route("api/usuaris-client/{filtre}/{filtraPer}")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuari>>> GetUsuarisFiltre(string filtre, int filtraPer)
         {
             if (filtraPer == 1)
             {
-                return await _context.Usuaris.Where(x => x.Dni.StartsWith(filtre)).ToListAsync();
+                return await _context.Usuaris.Where(x => x.Dni.StartsWith(filtre) && x.Rol == false).ToListAsync();
             }
             else if (filtraPer == 2)
             {
-                return await _context.Usuaris.Where(x => x.Nom.Contains(filtre)).ToListAsync();
+                return await _context.Usuaris.Where(x => x.Nom.Contains(filtre) && x.Rol == false).ToListAsync();
+            }
+
+            return NotFound("El filtre que intentes utilitzar no està disponible...");
+        }
+
+        // GET: api/usuaris-taxista/filtre/filtrePer
+        [Route("api/usuaris-taxista/{filtre}/{filtraPer}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuari>>> GetTaxistesFiltre(string filtre, int filtraPer)
+        {
+            if (filtraPer == 1)
+            {
+                return await _context.Usuaris.Where(x => x.Dni.StartsWith(filtre) && x.Rol == true).ToListAsync();
+            }
+            else if (filtraPer == 2)
+            {
+                return await _context.Usuaris.Where(x => x.Nom.Contains(filtre) && x.Rol == true).ToListAsync();
             }
 
             return NotFound("El filtre que intentes utilitzar no està disponible...");
@@ -322,6 +299,21 @@ namespace APIProjecte.Controllers
             }
 
             return NoContent();
+        }
+
+        [Route("api/usuari_image/{filename}")]
+        [HttpGet]
+        public IActionResult GetImage(string filename)
+        {
+            var filePath = Path.Combine("Photos", filename);
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, "image/jpeg");
         }
     }
 }

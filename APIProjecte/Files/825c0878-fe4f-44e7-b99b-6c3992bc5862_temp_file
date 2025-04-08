@@ -1,0 +1,373 @@
+~V|SOFT S.A.|FIEBDC-3/2002|Presto 8.8||ANSI|
+~K|\2\2\3\2\2\2\2\EUR\|0|
+~C|1#||ACTUACIONES PREVIAS|0|201119|0|
+~D|1#|1.01\1\1\1.02\1\1\495\1\1\|
+~C|1.01|PA.|TOMA DE CORRIENTE Y AGUA|0|220120|0|
+~C|1.02|PA.|LIMPIEZA DE ZONA AJARDINADA|0|201119|0|
+~C|10#||SEGURIDAD Y SALUD|0|220120|0|
+~D|10#|10.01\1\1\10.02\1\1\|
+~C|10.01|PA.|ELABORACION PLAN DE SEGURIDAD Y SALUD|0|220120|0|
+~C|10.02|PA.|APLIACION DE MEDIDAS Y PROTECCION EN SEGURIDAD Y SALUD|0|220120|0|
+~C|2#||FACHADA PRINCIPAL|0|201119|0|
+~D|2#|2.01\1\1\2.02\1\1\2.03\1\15\2.04\1\1\2.05\1\1\2.06\1\1\2.07\1\46.21\2.08\1\1\2.09\1\4\2.10\1\4\2.11\1\644.71\2.12\1\293.05\2.13\1\293.05\2.14\1\252.66\2.15\1\252.66\2.16\1\558.37\2.17\1\60.18\2.18\1\60.18\2.19\1\78.04\2.20\1\9.63\2.21\1\269.46\2.22\1\60.18\2.32\1\24\|
+~C|2.01|M2.|ANDAMIAJE FACHADA PRINCIPAL|0|220120|0|
+~C|2.02|M2.|MONTACARGAS|0|220120|0|
+~C|2.03|ML.|MARQUESINA PROTECTORA|0|220120|0|
+~C|2.04|UD.|DESMONTAJE Y REPOSICION DE INST. ELECTRICAS Y TELECO|0|220120|0|
+~C|2.05|UD.|DESMONTAJE Y REPOSICION DE INSTALACION DE GAS IND. Y GENERAL|0|220120|0|
+~C|2.06|UD.|MODIF. SALIDAS DE CALDEERAS GAS Y REJILLAS|0|201119|0|
+~C|2.07|ML.|DESMONTAJE Y RECOLOCACIÓN DE PLUVIALES|0|220120|0|
+~C|2.08|PA.|DESMONTAJE DE ELEMENTOS DE FACHADA|0|220120|0|
+~C|2.09|UD.|DESMONTAJE DE REJAS DE VENTANA|0|201119|0|
+~C|2.10|UD.|COLOCACIÓN DE REJAS DE VENTANA|0|201119|0|
+~C|2.11|M2.|LIMPIEZA DE FACHADA mediante chorro de agua presión.|0|220120|0|
+~C|2.12|m2.|PICADO DE RASEO|0|201119|0|
+~C|2.13|M2.|RASERO PREVIO (RECUPERACION DE VOLUMEN PICADO)|0|201119|0|
+~C|2.14|ML.|PICADO DE MOCH. ALF. Y DINTELES|0|220120|0|
+~C|2.15|ML.|ZARPEO DE MORTERO EN MOCH. ALF. Y DINTELES|0|220120|0|
+~C|2.16|M2.|BEISSIER THERM E - EPS GRAFITO 10 cm.|0|220120|0|
+~C|2.17|ML.|BEISSIER THERM E - EPS GRAFITO 4 cm. EN ALERO|0|201119|0|
+~C|2.18|ML.|ALBARDILLA DE REMATE EN ALERO|0|201119|0|
+~C|2.19|ML.|ALFEIZAR METALICO STOFENSTERBAK DUO e_2 mm.|0|220120|0|
+~C|2.20|ML.|ALFEIZAR DE PIEDRA CENIA e_20 mm.|0|220120|0|
+~C|2.21|ML.|MOLDURAS DE VENTANAS|0|220120|0|
+~C|2.22|ML.|MOLDURA DE ARRANQUE|0|271219|0|
+~C|2.32|ML.|LLAGUEADO ENTRE VENTANAS|0|220120|0|
+~C|3#||VENTANAS|0|201119|0|
+~D|3#|3.01\1\3\3.02\1\42\|
+~C|3.01|UD.|VENTANA 01A 1470x2500 mm. (ESCALERA)|0|220120|0|
+~C|3.02|UD.|SUSTITUCION DE LAMAS DE PERSIANA|0|201119|0|
+~C|495|PA.|LIMPIEZA, DURANTE Y FINAL DE OBRA|0|220120|0|
+~C|5#||BAJO CUBIERTA|0|201119|0|
+~D|5#|5.01\1\1\5.02\1\122.8\5.03\1\10\5.04\1\10\5.05\1\122.8\|
+~C|5.01|UD.|LIMPIEZA DE BAJO CUBIERTA|0|201119|0|
+~C|5.02|M2|AISLAMIENTO LANA DE ROCA e_14 cm.|0|220120|0|
+~C|5.03|UD.|REALIZACION DE PASOS TABIQUE CONEJERO|0|220120|0|
+~C|5.04|UD.|RECONSTRUCCIÓN DE PASO TABIQUE CONEJERO|0|220120|0|
+~C|5.05|M2.|COLOCACIÓN DE TABLERO OSB|0|201119|0|
+~C|6#||BALCONES|0|220120|0|
+~D|6#|6.01\1\11.4\6.02\1\44.75\6.03\1\29.47\6.04\1\44.75\6.06\1\33.66\6.08\1\44.75\6.09\1\14.8\6.10\1\50.11\6.11\1\46.74\6.12\1\29.47\6.13\1\33.66\6.14\1\44.75\6.17\1\44.75\6.15\1\44.75\6.16\1\44.75\|
+~C|6.01|ML.|ARRANQUE DE BARANDILLA|0|220120|0|
+~C|6.02|M2.|DEMOLICION DE SOLADO EXISTENTE|0|220120|0|
+~C|6.03|ML.|ROZA PERIMETRAL EN PERIMETRO BALCONES|0|220120|0|
+~C|6.04|M2.|LIMPIEZA Y PICADO DE PINTURA EN TECHO|0|220120|0|
+~C|6.06|ML.|SANEADO DE FRENDES DE BALCONES Y FORJADOS|0|220120|0|
+~C|6.08|M2.|FORMACIÓN DE PENDIENTE|0|220120|0|
+~C|6.09|ML.|PERFIL DE ALUMINIO LACADO PARA GOTERON|0|220120|0|
+~C|6.10|M2.|IMPERM. DE BALCON CON DRY80 DE REVESTECH|0|220120|0|
+~C|6.11|M2.|COLOCACIÓN DE BALDOSA CERAMICA|0|220120|0|
+~C|6.12|ML.|RODAPIE DE BALOSA CERAMICA|0|220120|0|
+~C|6.13|ML.|RASEO Y SISTEMA ANTIGRIETAS EN FRENTES BALCONES|0|220120|0|
+~C|6.14|ml.|BARANDILLA DE ACERO INOXIDABLE|0|220120|0|
+~C|6.15|M2.|ENFOSCADO MAESTREADO DE DE TECHOS|0|220120|0|
+~C|6.16|M2.|PINTURA ANTICARBONATACIÓN EN TECHOS|0|220120|0|
+~C|6.17|ML.|PLACA FENOLICA FUNDERMAX MAX EXTERIOR|0|220120|0|
+~C|7#||PLANTA BAJA|0|201119|0|
+~D|7#|7.01\1\29.88\7.02\1\10.22\7.03\1\19.34\7.04\1\1\7.05\1\25.61\7.06\1\1\7.07\1\1\7.08\1\35.62\|
+~C|7.01|M2.|REVESTIMIENTO DE PIEDRA CALIZA GRIS APOMAZADA|0|220120|0|
+~C|7.02|ML.|CANALETA ELECTRICA PARA INSTALACIONES|0|220120|0|
+~C|7.03|M2.|LIJADO Y PINTADO DE PUERTA DE GARAJE|0|201119|0|
+~C|7.04|UD.|SUSTITUCION DE PORTERO AUTOMATICO|0|201119|0|
+~C|7.05|ML.|DRENAJE PERIMETRAL|0|201119|0|
+~C|7.06|UD.|ARQUETA DE REGISTRO|0|201119|0|
+~C|7.07|UD.|PLACA DE PIEDRA INDICATIVO TALLADA|0|201119|0|
+~C|7.08|M2.|PINTADO DE PLANTA BAJA|0|201119|0|
+~C|8#||CONTROL DE CALIDAD|0|220120|0|
+~D|8#|8.01\1\1\8.02\1\1\|
+~C|8.01|PA.|PRUEBA DE SERVICIO|0|220120|0|
+~C|8.02|PA.|PRUEBAS DE EXTRACCIÓN|0|220120|0|
+~C|9#||GESTION DE RESIDUOS|0|220120|0|
+~D|9#|9.01\1\1\9.02\1\1\|
+~C|9.01|UD.|GESTION DE RESIDUOS|0|220120|0|
+~C|9.02|UD.|PLAN DE GESTIÓN DE RESIDUOS|0|220120|0|
+~C|PORTUONDO 3##||REHABILITACIÓN DE FACHADAS Y CUBIERTA EN PORTUONDO nº 3|0|201119|0|
+~D|PORTUONDO 3##|1\1\1\2\1\1\3\1\1\5\1\1\6\1\1\7\1\1\8\1\1\9\1\1\10\1\1\|
+~T|1.01|Conexión de toma agua y colocación de caja eléctrica durante la ejecución de obra y tramitación en compañía suministradora. Partida alzada.|
+~T|1.02|Desbroce de arbustos y hierbas, en el exterior del edificio, mediante medios manuales o mecanicos. Incluso recogida de la broza generada y carga sobre contenedor. Medida la unidad ejecutada.|
+~T|10.01|Elaboración de Plan de Seuridad para la obra, realizado por la empresa de Prevención. Tramitación de la apertura del centro de trabajo en el Gobierno Vasco. Partida Alzada.
+|
+~T|10.02|Aplicación de medidas de seguridad en protecciones colectivas, colocación de barandillas, pasos provisionales, señalización, para el transcurso de la obra que pudiera designar el Plan de Seguridad. Medida la partida alzada.
+
+1.Sistemas de Protección colectiva (andamios, plataformas, pasadizos, barandillas, proteccion eléctrica, huecos horizontales, protección contra incendios, marquesinas, redes y mallas)
+2.Formación, reuniones a los trabajadores.
+3.Equipos de protección individual, Para la cabeza, Contra caidas de altura, los ojos y la cara, las manos y brazos, los oidos, pies y piernas, el cuerpo (vestuario de protección) y las vías respiratorias.
+4.Medicinas preventiva y primeros auxilios como Material médico, Reconocimientos médicos
+5.Instalaciones provisionales de higiene y bienestar si es necesario como, acometida a casetas prefabricadas, casetas (alquiler/construcción/adaptación de locales), mobiliario y equipamiento, limpieza.
+6.Señalizaciones y cerramientos del solar, balizas, ballados y accesos [Valla metálica prefabricada de chapa ciega galvanizada, H=2 m. & Puerta de acceso de chapa galvanizada de 4x2 m.], señales, placas, carteles,...Etc.
+|
+~T|2.01|Andamio EN FACHADA PRINCIPAL formado por estructura tubular de acero galvanizado en caliente, de diámetro y espesor suficiente, sin duplicidad de elementos verticales,compuesto por torre de acceso a obra en módulo paralelo a desarrollo de plataformas de andamio mediante sistema de escalera tipo zanca, plataformas de trabajo de ancho suficiente, dispuestas cada un mínimo de 2 m de altura, escalera interior con trampilla, barandilla trasera con dos barras y rodapié, y barandilla delantera con una barra, galvanizado en caliente, con doble barandilla quitamiedos de seguridad, rodapié perimetral, plataformas de acero y escalera de acceso tipo barco, para la altura requerida por proyecto.
+
+Preparación de base, placas de apoyo al suelo sobre tacos de madera o durmientes de acuerdo con la capacidad de carga de la solera, incluido p.p. de arriostramiento a fachadas, colocación de red de protección para caída de materiales y  visera de protección p.p. de medidas auxiliares y trabajos previos de limpieza para apoyos, suministrado por empresa especialista en Andamios y Estructuras.
+
+NOTA IMPORTANTE: Estarán incluidos los cálculo de estructura, proyecto de andamio y montacargas y trabajos previos de limpieza para apoyos, suministrado por empresa especialista en Andamios y Estructuras, con certificado de correcta instalación y revisiones periódicas necesarias (mínimo 1 cada 15 días) para garantizar la seguridad de los trabajadores y operarios.
+
+Criterio "por unidad" (sin medición): Se contemplaran la totalidad de fachadas; lo que a cinta corrida y sin deducir huecos supone a efectos informativos (sin que resulte vinculante) para que sirva al cálculo presupuestario un total de aproximadamente 210 m² de superficie de fachada. (Modo de certificación: 30% instalación / 30% a mitad de obra / 40 % certificación final de obra)|
+~T|2.02|Alquiler durante toda la obra, incluyendo montaje y desmontaje, así como transporte a obra y retirada a fin de obra, de MONTACARGAS tubular normalizado, para soporte de 250 kg. tipo europeo multidireccional, para trabajos de rehabilitación, incluido p.p. preparación de base, placas de apoyo al suelo, estructura de mecanotubo para sujeción y protección del mismo, arriostramientos, lona de protección, entablado de parte baja para evitar que sea escalable y medios auxiliares. Medida la unidad ejecutada.
+
+NOTA IMPORTANTE: Estarán incluidos los cálculo de estructura, proyecto de andamio y montacargas y trabajos previos de limpieza para apoyos, suministrado por empresa especialista en Andamios y Estructuras, con certificado de correcta instalación y revisiones periodicas necesarias (minimo 1 cada 15 días) para garantizar la seguridad de los trabajadores y operarios.|
+~T|2.03|Montaje, permanencia y desmontaje de marquesina perimetral con tabla de pino de 5 cm sobre transversales de 7cm de canto sobre ménsula horizontal de al menos 1m de vuelo y prolongación de plataforma, necesaria en el conjunto de la obra y hasta el fin de la misma. Incluso suministro e impermeabilización de la misma mediante telas asfálticas de oxiasfalto de 3 kg de densidad por m², soldadas entre si a fin de impedir la caída de agua. Incluso tubos de desagüe con sus correspondientes caídas, todo ello en cumplimiento de las ordenanzas vigentes. Incluidos todos los medios auxiliares necesarios, transporte, señalización, acarreo de materiales en obra, etc. Permitiendo en todo momento el acceso seguro a todos los locales y portal a viviendas desde planta baja. Se incluirá la instalación de andamio de paso igual o mayor a 1,5m. en acera. Material y mano de obra.. Medida la longitud de fachada existente y valorada para todo el tiempo que dure la obra. Medida la longitud ejecutada.|
+~T|2.04|Desmontado y reposición (SOLTAR, DESPLAZAR Y SUJETAR AL ANDAMIO EVENTUALMENTE EN FASE DE OBRA, Y POSTERIOR FIJACIÓN SOBRE NUEVA FACHADA Y CUBIERTA MEDIANTE CANALIZACIÓN Y CAJEADO BAJO EL AISLAMIENTO) de red de instalación ELÉCTRICA y/o de TELEFONÍA Y DATOS (telecomunicaciones), de cableado visto fijo en superficie aérea y soportes de fijación al edificio emplazada en la envolvente exterior, de cajas y cuadros generales, incluso desconexión con corte en caso de ser necesario, previa anulación y neutralización por parte de la compañía suministradora, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar unida, con recuperación de todos los elementos realizada por instalador autorizado, en la totalidad de las fachadas a rehabilitar y montaje posterior.
+
+Soltar instalación preexistente y volver a fijarla una vez acometida la rehabilitación de la fachada respetando los puntos actuales de acometida. Incluso p/p de limpieza, acopio, retirada y carga manual de escombros sobre camión o contenedor. Y transporte a vertedero.
+
+Suministro e instalación de tendido de tubo rígido roscado de pvc de métrica 32 mm. CAJEADO BAJO EL AISLAMIENTO para canalización de telecomunicaciones INDEPENDIENTE A CADA VECINO, incluso codo y acceso a vivienda, y cajas de registro de dejando un cuerda en el interior de cada tubo como guía para el cableado posterior. Incluido p.p., caja de registro general, elementos de sujeción, abrazaderas o fijación mecánica para asegurar la fijación. Incluso p/p de accesorios, elementos de sujeción e hilo. Totalmente montada, conexionada y probada.
+
+Atención: Se emplearan fijaciones homologadas para SATE y sin puente térmico tipo StoFix Zyrillo o similar a aprobar por la D.F.. Se recomiendan hacer las perforaciones en cerámica "sin usar el percutor del taladro".  Los tendidos por el exterior se re-emplazaran "alineados, ordenados y agrupados" (ya que quedaran vistos en su fachada exterior) para fijar los mismos se emplearan abrazadera tipo puente en acero inoxidable.
+
+Criterio "por unidad" (sin medición): Se contemplaran la totalidad de las instalaciones eléctricas y de telecomunicaciones que discurren por fachadas y parte proporcional de cubierta; lo que supone a efectos informativos (sin que resulte vinculante) para que sirva al cálculo presupuestario un total de aproximadamente 87 ml.|
+~T|2.05|Desmontado y reposición (SOLTAR, DESPLAZAR Y SUJETAR AL ANDAMIO EVENTUALMENTE EN FASE DE OBRA, Y POSTERIOR FIJACIÓN SOBRE NUEVA FACHADA Y CUBIERTA) de red GENERAL E INDIVIDUAL de instalación de GAS, de conducciones vistas fijas en superficie aérea y soportes de fijación al edificio emplazada en la envolvente exterior, de armarios así como reguladores y llaves generales, incluso desconexión con corte en caso de ser necesario, previa anulación y neutralización por parte de la compañía suministradora, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar unida, con recuperación de todos los elementos realizada por instalador autorizado, e igualmente suministro y soldado de p.p. de conductos necesarios por incremento de desarrollo (longitud), así como de tramadas envainadas o en el interior de un conducto, en la totalidad de las fachadas a rehabilitar y montaje posterior. Y finalmente recubrimiento de esmalte de poliuretano color a decidir por la D.F. similar al resto de fachada (integración).
+
+Soltar instalación preexistente, soldar nuevos tramos requeridos por recrecido y volver a fijarla una vez acometida la rehabilitación de la fachada respetando los puntos actuales de acometida. Incluso p/p de limpieza, acopio, retirada y carga manual de escombros sobre camión o contenedor. Y transporte a vertedero.
+
+Atención: Se emplearan fijaciones homologadas para SATE y sin puente térmico tipo StoFix Zyrillo o similar a aprobar por la D.F.. Se recomiendan hacer las perforaciones en cerámica "sin usar el percutor del taladro".  Los tendidos por el exterior se re-emplazaran "alineados, ordenados y agrupados" (ya que quedaran vistos en su fachada exterior) para fijar los mismos se emplearan abrazadera tipo puente en acero inoxidable.
+
+Criterio "por unidad" (sin medición): Se contemplaran la totalidad de las instalaciones de gas que discurren por fachadas y parte proporcional de cubierta; lo que supone a efectos informativos (sin que resulte vinculante) para que sirva al cálculo presupuestario un total de aproximadamente 32 ml de CONDUCTO GENERAL Y 40 ml. de INDIVIDUAL, repercutidos para 7 vecinos (adecuación llaves, regulador, pruebas,...).|
+~T|2.06|Adecuación de instalación de ventilación de calderas (chimeneas y rejillas) emplazadas en fachada, mediante instalación de suplemento de:
+
+- Rejillas de aluminio o acero inoxidable tipo TROX similar y equivalente
+- Chimenea helicoidal (prolongación de tubo de caldera), modelo tipo COAXIAL "NEGARRA" o similar y equivalente según el caso, compuesto por pared interior de aluminio o acero inoxidable de diámetro idéntico al precedente y pared exterior de aluminio o acero inoxidable.
+
+Y/p.p. de piezas de prolongación o adaptadores y demás accesorios necesarios, con aislamiento de lana de roca en todo su perímetro, sellado e instalado. Totalmente montada, conexionada y probada por la empresa instaladora mediante las correspondientes pruebas de servicio (incluidas en este precio).
+
+Criterio "precio alzado" (sin medición): Se contemplaran la totalidad de las instalaciones; lo qe supone a efectos informativos (sin que resulte vinculante) para que sirva al cálculo presupuestario se estima una salida de caldera y una rejilla por vivienda (3 viviendas).
+|
+~T|2.07|Desmontado y reposición (SOLTAR, DESPLAZAR Y SUJETAR AL ANDAMIO EVENTUALMENTE EN FASE DE OBRA, Y POSTERIOR FIJACIÓN SOBRE NUEVA FACHADA Y CUBIERTA MEDIANTE CANALIZACIÓN) de red de EVACUACIÓN DE AGUAS de cubierta visto fijo en superficie aérea y soportes de fijación al edificio emplazada en la envolvente exterior, incluso corte y desplazamiento del tubo en caso de ser necesario, previa anulación de bajante existente, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar unida, con recuperación y tapado posibles agujeros en losas de balcones, en la totalidad de las fachadas a rehabilitar y montaje posterior.
+
+Suministro y montaje de bajante vista de aluminio lacado, sección circular y 90 mm de diámetro, para recogida de aguas, formada por piezas preformadas, con sistema de unión mediante abocardado, colocadas con soportes especiales colocados cada 50 cm, instalada en el exterior del edificio. Incluso p/p de codos, soportes y piezas especiales. Totalmente montada, conexionada y probada por la empresa instaladora mediante las correspondientes pruebas de servicio (incluidas en este precio).
+
+Atención: Se emplearan fijaciones homologadas para SATE y sin puente térmico tipo StoFix Zyrillo o similar a aprobar por la D.F.. Se recomiendan hacer las perforaciones en cerámica "sin usar el percutor del taladro".  Los tendidos por el exterior se re-emplazaran "alineados, ordenados y agrupados" (ya que quedaran vistos en su fachada exterior) para fijar los mismos se emplearan abrazadera tipo puente en acero inoxidable.
+Medida la longitud ejecutada.
+|
+~T|2.08|Desmontaje, desplazamiento, corte o eliminación de elementos adherido en fachada, como pueden ser clavos, jardineras, pipetas, luces de balcón, antenas parabólicas, armarios, bajantes colindantes a fachada y todo elemento que pudiera ocasionar impedimentos para una correcta colocación del sistema de aislamiento continuo en la fachada, su retirada/eliminación deberá ser aprobado por la D.F. incluido p.p. de retirada a escombro a contenedor. Partida alzada.|
+~T|2.09|Retirada de verga existente, saneado, pintado y recolocación de la misma en ventana de viviendas, incluso p.p. de custodia, soldaduras, pintado, chapas de sujeción. Totalmente colocado. Medida la unidad ejecutada.|
+~T|2.10|Suministro y colocación de verja de 1180*900 mm, formadas por marco perimetral de llanta de 40*5 mm, llanta intermedia y barrotes de tubo diámetro 20 mm, fabricado todo ello con material galvanizado y lacado al horno. incluso p.p. de traslado a contenedor, soldaduras, pintado, chapas de sujeción. Totalmente colocado. Medida la unidad ejecutada.
+|
+~T|2.11|Preparación del revestimiento de fachada, y frentes de forjado actuales mediante  un lavado con agua caliente a presión controlada de 180 bares y jabón neutro, aclarado de la superficie, con el fin de eliminar polución superficial, grasas, musgos, hongos y restos de pintura con baja adherencia en superficie, incluido p.p. transporte, montaje y desmontaje de equipo, protección de ventanas existentes, limpieza de restos generados, retirada y transporte a contenedor y medios auxiliares. Dejando la superficie preparada para la colocación del sistema de aislamiento térmico. Medida la superficie ejecutada.|
+~T|2.12|Picado de fachada actual de raseo de medianeras, en mal estado o con posibilidad de desprendimiento, eliminándolo totalmente sin deteriorar la superficie, soporte picando hasta paramento vertical estructural, incluido p.p de limpieza y trasporte de escombros a contenedor. Medida la superficie ejecutada.|
+~T|2.13|Raseo maestreado en paramento existente con cemento hidráulico, M-60 (1 a 4) hasta igualar soporte de fachada actual para la colocación de aislamiento, para reparación no estructural del revestimiento del edificio (zonas donde se han desprendido de mortero, existen oquedades, se ha demolido el gresite, etc.) Incluso p/p de humectación previa de la superficie, preparación de la mezcla, perfilado de aristas, acabado superficial fratasado y curado. Medida la superficie ejecutada.
+|
+~T|2.14|Picado de recerco de ventanas compuesta por mocheta, alféizares y dinteles, mediante con medios mecánicos y/o con medios manuales, eliminándolo totalmente sin deteriorar la superficie soporte, que quedará al descubierto y preparada para su posterior revestimiento .  Incluso p/p de limpieza, acopio, retirada y carga manual de escombros sobre camión o contenedor. Medida la longitud ejecutada.
+
+Nota: Se estudiara cada ventana si es necesario no la realización de picado o no de las mochetas a aprobar por la D.F., dependiendo del marco de ventana y la situación de cada hueco para la colocación del aislamiento.|
+~T|2.15|Zarpeo de mortero hidrofugante sobre superficie de ladrillo en mochetas, alféizares y dinteles, hasta dejar un soporte homogéneo para la colocación de aislamiento. Incluso p/p de humectación previa de la superficie, preparación de la mezcla, perfilado de aristas, acabado superficial fratasado y curado. Medida la longitud ejecutada.|
+~T|2.16|Rehabilitación energética de fachada, mediante aislamiento térmico por su cara exterior: SISTEMA BEISSIER THERM E  AISLAMIENTO TÉRMICO mínimo 10 cms - FIJACIÓN MEDIANTE PEGADO + ESPIGAS CON TAPA + ACABADO REVOQUE AL SILOXANO (Beissier Granocryl BRS SL10).
+
+- Sistema compuesto de Aislameinto Térmico Exterior para fachadas SISTEMA BEISSIER THERM E-EPS GRAFITO CON REVOQUE: con clasificación de protección contra incendios B-s2, d0 según EN 13 501-1.
+ Constituido por paneles de espuma rígida de poliestireno POREXTER PLUS F15 SATE (made of NEOPOR), conductividad térmica 0,032 W/m.K, formato: 100 x 50 cm, borde de panel: plano y espesor de  10 cm.. En las zonas de jambas y retornos de la pared el espesor mínimo del POREXTER PLUS será de 4 cm. Pegado con mortero Ligero de cemento modificado con resinas sintéticas y fibras BEISSIER MORTERO BASE LIGERO BME 12007, cubriendo por lo menos el 40 % del panel. Ensamblados, de forma plana lisa y uno junto a otro totalmente a presión en el proceso de encolado. En toda la zona, fijación adicional de los paneles aislantes con espigas clavo plástico, EJOT STRU2G 135mm., (el anclaje debe penetrar en el ladrillo y hormigón unos 4 cm.) diámetro del platillo 60 mm, tornillo de expansión de acero galvanizado. Verificar el anclaje de las espigas en la base resistente. La cabeza de la espiga se cubrirá con Tapa redonda de EPS gris que quedará a ras de la superficie del material aislante. Distribución de fijación con espigas de conformidad con las directrices de tratamiento de 6,0 unidades/m² en la zona frontal. En la zona de bordes (ancho zona de bordes: 1/8 x ancho del edificio  = 2 m), según la altura de la edificación de la siguiente forma: De 0 - 8 m de altura 8,0 unidades/m², de 8 - 20 m de altura 10,0 unidades/m² y más de 20 m de altura 14,0 unidades/m². Y en base a las carga de viento / altura de la edificación y ensayos de tracción pull-off de las espigas realizadas in-situ y en base a Informe Técnico a suministrar por el fabricante ex profeso. Revisando si han quedado juntas abiertas en las superficies tendidas y con pequeños desniveles, rellenando las posibles juntas con ESPUMA para pistola hasta 2mm o con material EPS para aberturas mayores a 2mm y rectificando plano con una plancha esmeriladora o mecánicamente con  lijadora Inoplan. Colocación de los perfiles especiales de refuerzo de PVC con malla FV como Perfil Goterón y Perfil Cantonera. Aplicar en toda la superficie mortero armadura, LIBRE DE CEMENTO Beissier Mortero Base Ligero BME 12007 para revoco LW (CS III). Introducir presionando la malla de armadura de fibra de vidrio antiácalis de 160gr/m2 y alisarla con la llana. Solapar las juntas de malla de 10 cm inclusive con los accesorios. Aplicación de capa de acabado final con Revoque decorativo pétreo siliceo al siloxano Beissier Granocryl BRS SL 15, con marcado CE según EN 15824:2010, impermeable al agua permeable al vapor de agua (2 manos). Color a aprobar por propiedad y definir por la D.F. con el límite de luminosidad está en 20%.
+
+
+
+Estará incluido dentro del precio:
+- Se requerirán diferentes espesores, con un mínimo de 10 cm. buscando un acabado totalmente vertical y aplomado en ambos sentidos, vertical y horizontal. Sellado de juntas abiertas con Espuma PU o tiras de EPS, si la abertura es menor de 2mm o si es mayor de 2mm respectivamente.
+- Las Fijaciones mecánica con espiga Ejot NTKU + Tapón de EPS según pliego de condiciones de BEISSIER.
+- Colocación de la Cinta de Sellado en todos los encuentros del sistema con otros elementos. 
+- Colocación de Perfil Goterón y Malla Cantonera en todas las esquinas con el mortero armadura.
+-  Acabado  Revoque decorativo pétreo siliceo al siloxano Beissier Granocryl BRS SL 15
+- El arranque del Sistema se realizara mediante perfil de Zócalo de PVC. 
+- En mochetas donde no es posible colocar 4 cm. de EPS en encuentro con la carpintería se colocará perfil de arranque.
+- Sistema para fijación sin puente térmico replanteado "in situ" en zonas donde se prevea fijar a posteriori (electricidad, telecomunicaciones, gas, etc.). 
+
+Ejecutado todo ello según ETA-03/0027 y Proyecto - Detalles constructivos específicos del sistema, incluyendo p.p. de replanteo y ejecución de juntas y resto de detalles.
+
+Muy Importante: La empresa instaladora del SISTEMA deberá estar homologada por "BEISSIER". Solo podra ejecutar la obra una empresa/subcontratista que cuente con la aprobación por escrito de BEISSIER de cara a contar con garantía completa del sistema aplicado (instalación + sistema BEISSIER).
+
+Criterio de medición: No se deducen los huecos. la superficie a realizar se medirá a cinta corrida (las mochetas/jambas y dinteles se incluirán en la medición). Medida la superficie ejecutada.|
+~T|2.17|Forrado de antepecho perimetral en cubierta plana, mediante de aislamiento y sistema antigrietas compuesta por:
+
+- Panel rígido de poliestireno extruido, tyrodur 3035 CS,  4 cm., de superficie lisa y mecanizado lateral a media madera, de 40 mm de espesor, conductividad térmica 0,034 W/(mK). Sujeta con espigas a paramento existente.
+- Mortero de Armadura, (sistema antigrietas) Colocación de los perfiles especiales de refuerzo como  Perfil Antigoteo y  Malla Cantonera. Aplicar en toda la superficie mortero armadura, LIBRE DE CEMENTO StoArmat Classic de densidad 1,5 g/cm3 según DIN 53 217. Introducir presionando la malla de armadura Sto Malla de Fibra de Vidrio (con resistencia a fisuración > 1750 N/50 mm según DIN EN ISO 13934-1) y alisarla con la llana. Solapar las juntas de malla de 10 cm inclusive con los accesorios.
+
+Diseño geométrico a replantear "in situ" y todo ello según detalles constructivos en planos. Media la longitud ejecutada.|
+~T|2.18|Suministro y colocación de albardilla metálica de ALUMINIO de aprox. 420 mm de  desarrollo (pendiente de replantear "in situ") y 2 mm de espesor, para cubrición de petos borde CUBIERTA, con goterón a ambos lados de longitud 40 mm en caso de canalón y a un único lado en el resto, compuesto de una capa de regularización de mortero de cemento hidrófugo M-5 de 4 cm de espesor medio, creando una pendiente suficiente para evacuar el agua, colocación de AISLAMIENTO 4 cm. (CONTEMPLADO EN PARTIDA ANTERIOR) sobre el cual vía un adhesivo bituminoso de aplicación en frío para chapas metálicas, se coloca el perfil de protección de albardilla. Incluso sellado con masilla altamente elástica entre piezas (previa colocación por el inferior de una "mecha" según detalle y criterio definido por la D.F.), cortes necesarios para embocar anclajes/postes, uniones con los muros y p/p de elementos propios de fijación y uniones entre perfiles. Medida la longitud ejecutada.
+|
+~T|2.19|Suministro y colocación de vierteaguas de aluminio lacado original de la casa Sto (Stofensterbak Duo) en el alféizar de la ventana, compuesto por 5 piezas, bases receptoras en esquinas y rincones, bandeja lineal de aluminio con pliegue para goterón. Chapa comercial ref. FF2: Aluminio prelacado en PVDF, espesor 1,5 mm, color a determinar. Color de muestra a aprobar por la D.F. Las chapas están fabricadas de una aleación anticorrosiva con el 3% de Magnesio (A.A. 5754-DIN AlMg3) con un tratamiento H42 que le proporcionan unas características mecánicas elevadas y una muy buena conformabilidad consiguiéndose unos plegados perfectos que no afectan a la rotura del aluminio ni a la capa de pintura.Chapa suministrada con film de protección. Fabricado bajo las normas EN, DIN y ECCA - European Coating Association).La dimensión estándar comercial de suministro es de 3000 x 1500 x 1,5 mm.  Incluido p.p. de aislamiento EPS rígido (Sto panel zocalo), de 4 cm. de espesor para el alféizar, de 0,035 W/mK de conductividad térmica, Sto-cinta de sellado 2D, adhesivo impermeable tipo Sto Flexyl y recibido de la junta perimetral del vierteaguas con los diferentes paramentos con las juntas de sellado de StoSeal F505. Incluso suministro y colocación de dos perfiles originales de remate de vierteaguas en los encuentros con las mochetas, recibido de la junta perimetral con los diferentes paramentos, incluso piezas especiales en juntas de dilatación, encuentros en esquina o en rincón, etc. Medida la longitud ejecutada.|
+~T|2.20|Suministro y colocación de vierteaguas de CALIZA CENIA FLAMEADA, de e_2 mm. de espesor, para coronación de alféizares con carpintería, con formación de goterón perimetral mediante hendidura realizada en maquina numérica, y apomazado de cantos vistos (2 cortos y 1 largo) y arista vidas vistas biseladas, con perfil de PVC o aluminio plegado con forma de G en los encuentros con las mochetas con el fin de impedir que remonte el agua del alféizar, incluido p.p. de aislamiento EPS rígido (Sto panel zocalo), de 4 cm. de espesor para el alféizar, de 0,035 W/mK de conductividad térmica, Sto-cinta de sellado 2D, adhesivo impermeable tipo Sto Flexyl y recibido de la junta perimetral del vierteaguas con los diferentes paramentos con las juntas de sellado de StoSeal F505. Medida la longitud ejecutada.
+
+Nota: las piezas del alféizar se realizaran en una pieza con una longitud aproximada de ,1,45 m. y 0,40 m de ancho (pendiente de replantear "in situ") Medida la longitud ejecutada.|
+~T|2.21|Moldura decorativa lisa realizada “in situ”, de dimensiones ancho 20cm y grueso 3cm, con EPS placas aislantes rígidas de las mismas características a las del sistema SATE general, de 3cm de espesor, adheridas a la fachada sobre la capa de refuerzo del sistema, mediante doble encolado con mortero ligero de cemento modificado con resinas sintéticas y fibras Beissier Mortero Base Ligero BME 12007, con marcado CE según EN 998-1:2000, aplicado por el reverso de la moldura y en fachada con llana dentada de 10x10mm, y una vez seco, aplicación de capa de refuerzo mediante raseo con el mismo mortero y embebido de malla de fibra de vidrio de 160 grs/m2 con refuerzo de cantos vivos con perfiles Protektor de PVC de esquina con malla de FV, y una vez seca esta primera capa, aplicación de una nueva capa de refuerzo del mismo material talochado, dejando la superficie preparada para el acabado, consiguiendo un espesor total de 4-5mm, quedando la malla en el tercio exterior de la capa de mortero.
+
+|
+~T|2.22|Moldura decorativa prefabricada de EPS de 35 kg/m3 de densidad, modelo a elegir por la D.O., con acabado en mortero elástico y preparada para pintar, evitando con ello puentes térmicos, adheridas a la fachada mediante doble encolado con mortero ligero de cemento modificado con resinas sintéticas y fibras Beissier Mortero Base Ligero BME 12007, con marcado CE según EN 998-1:2010, aplicado por el reverso de la moldura y en fachada con llana dentada de 10x10mm, sellado de juntas con masilla elástica de PU y acabado final con pintura elástica al siloxano Beissier Betaelastic Mate, impermeable al agua y permeable al vapor de agua, colores (no se recomienda que el grado de reflexión del color sea inferior al 20 %) a decidir por la D.O. Medida la longitud ejecutada
+|
+~T|2.32|Formación de Llagueado de TIPO II CON NUDO TRAPEZOIDAL, en EPS sin aberturas, nivelada y lijada, fresado horizontal sobre guía, asegurando la linealidad, limpieza y aplicado de mortero de armadura, libre de cemento StoArmierungputz de densidad 1,5 g/m3 según DIN 53 217. Incluido p,p, de malla de armadura STO Malla Llagueada de Fibra de vidrio y aislada con llana especial para llagueado, solapando juntas de malla 2cm., aplicación de capa de acabado con dos manos de Sto Lotusan-k. Medida la longitud ejecutada.|
+~T|3.01|Suministro y colocación de VENTANA de PVC WERU modelo SERENO, de dimensiones 1470 mm (ancho) x 2500 mm (alto) según memoria de carpintería de las siguientes características:
+- Profundidad de perfil 70 mm, con cinco cámaras. Composición: Hoja inferior fija y dos hojas altas practicables, siendo unas de ellas oscilobatiente.
+- Color interior blanco y color exterior azul.
+- Vidrio termoaislante Weru Extra Therm en hojas de zona superior, composición 4 / 16 Argón / 4 Bajo emisivo, con perfil pvc condestop en perimetro
+- Cajón compacto de persiana, con lamas de persiana, tipo R4 aluminio espumado, en color marrón. Tipo de accionamiento: Manivela (lado derecho).
+- Vidrio termoaislante/segurizado Weru ExtraTherm Secur en hoja de zona inferior, composición 6 Vidrio seguridad / 16 Argón / 4 Bajo emisivo.
+- Transmitancia térmica del conjunto de la carpintería 1,3 W(m2K) (según dimensión).
+- Juntas EPDM (resistentes a la intemperie) en color gris.
+- Marco y hoja de perfil de PVC con refuerzo de acero en función de las dimensiones.
+- Se incluyen manillas de seguridad, tipo Secustik.|
+~T|3.02|Persiana enrollable de lamas de PVC de 37 mm, color AZUL RAL 5010, engarzadas con anillas de chapa o con alambre de acero galvanizado, equipada con eje, discos, cápsulas y todos sus accesorios, con accionamiento manual mediante cinta y recogedor, en cajón de persiana ya realizado. Totalmente montada y probada. Medida la unidad de ventana ejecutada.
+
+NOTA INFORMATIVA, PARA QUE SE
+23X153 (12 ud.) ; 93X230 (6 ud.) ; 211X135 (3 ud.) ; 247X153 (3ud.) ; 118X153 (12ud.) ; 78x153 (3 ud.) ; 150x250 (3 ud.)
+|
+~T|495|.Partida alzada de limpieza de todo los trabajos realizados, antes, durante y tras la finalización de la obra, de trabajos de derribos, picados, morteros y colas de colocación, pegado y sellados de materiales, aislamientos, morteros, cerámicas, plásticos, maderas, herramientas, cartones, virutas de hierro, serrín, tableros de madera, etc. ya sea mediante medios manuales, escobas, fregonas, jabones o producto de limpieza especiales, y/o lavado con agua caliente a presión controlada de 180 bares y jabón neutro, así como su posterior secado mediante trapo o paño limpio .
+
+INCLUIDO LIMPIEZA FINAL DE TODAS LAS FACHADAS, BALCONES, VENTANAS, VIERTEAGUAS, CARPINTERÍAS, VIDRIOS, BAJANTES Y TUBOS, (PAREDES, SUELO Y TECHO) POR EMPRESA ESPECIALIZADA EN TAREAS DE LIMPIEZA (SI FUERA NECESARIO). Partida Alzada.
+
+Nota: Se exigirá un andamio limpio y ordenado durante la ejecución de todos los trabajos.|
+~T|5.01|Limpieza de escompros,tejas rotas, mediante medios manuales y pasado de aspiradora para la eliminación de polvo. Incluso recogida de escombros y carga sobre contenedor. Medida la unidad ejecutada.|
+~T|5.02|Suministro y colocación de aislamiento formado por lana de roca de 140 mm. de espesor y densidad nomival de 120kg/m3, ROCKWOOL Rockfen 520, colocado sobre forjado de bajo cubierta, y anclado mediante tacos de pvc a razón de 4 ud. por plancha, incluso p.p. de preparación del paramento y limpieza posterior. Medida la superficie ejecutada. incluido p.p. de suministro, corte, colocación y cajeado de elementos cubierta (pilares y arcos). Medida la superficie ejecutada.
+|
+~T|5.03|Realización de huecos, para paso de persona y aislamiento, en tabiques conejeros de bajo cubierta, incluso acopio y retirada de escombros a contenedor. Medida la unidad ejecutada.
+|
+~T|5.04|Recosntrucción de pasos conejeros realizados para la colocación de aislamiento, mediante ladrillo machetón, incluso p.p. de mortero de agarre, y medios manuales, Unidad totalmente ejecutada.|
+~T|5.05|Suministro y colocación de tablero de partículas orientadas OSB-1 de 18 mm., machihembrado, colocado sobre aislamiento térmico, incluso p.p. de cortes y ajustes. Medida la superficie ejecutada.|
+~T|6.01|Arranque de barandilla de balcón existente, mediante medios manuales y mecánicos, incluso p.p. de retirada de escombro a pie de carga, transporte a camión o contenedor. Medida la longitud ejecutada.|
+~T|6.02|Demolición de pavimento existente (tipo baldosas / terrazo), picado del material de agarre y demolición de la base soporte (mortero de pendiente), hasta llegar a losa de hormigón, con martillo neumático compresor y/o medios manuales, sin deteriorar los elementos constructivos contiguos y el forjado / losa estructural. Incluso p/p de limpieza, acopio, retirada y carga manual de escombros sobre camión o contenedor. Medida la superficie ejecutada.
+
+Nota: si existirá una segunda capas oculta, en el momento de picar se considera todo una partida única, estaría incluido en este precio.|
+~T|6.03|Relización de roza perimetral, posterior raseo y median caña de terminación para embutir la impermeabilización de 20 de alto por 4 cm de profundidad.|
+~T|6.04|Rascado de pinturas en techos planos, hasta la completa eliminación de las mismas, ejecutado por procedimiento manual mediante rasqueta y espátula, incluso retirada y carga de escombros a camión o contenedor. Media la superficie ejecutada.|
+~T|6.06|TRABAJOS A REALIZAR PARA REPARACIÓN DE FRENTES DE FORJADO Y TECHOS BALCONES: (SE INCLIRA EL FRENDE FORJADO Y 40CM. HACIA EL INTERIOR)
+1.- SANEADO DEL HORMIGÓN: Saneado del hormigón deteriorado, dejando la armadura interna al descubierto en todo su perímetro, picando con martillo neumático todas las zonas afectadas hasta localizar la parte sana del mismo.
+2.- LIMPIEZA: Limpieza de la armadura eliminando totalmente el óxido hasta un grado SA 2 1/2, según la Norma Sueca de Calidad, por medios mecánicos.
+3.- PASIVADO DE ARMADURAS: Pasivado de las armaduras con la aplicación de dos manos de Epoxi rico en zinc tipo Zincrich, o SIKA MONOTOP 910
+4.- PÉRDIDA DE SECCIÓN: Cuando se produzca por oxidación en la armadura una pérdida de su sección igual ó superior al 20%, se sustituirá la misma por otra del mismo diámetro y características. (mínimo acero corrugado B500S)
+5.- REPOSICIÓN DE LA GEOMETRÍA ORIGINAL: Se ejecutará una correcta reposición de la geometría original de la sección de la vigueta,
+mediante la aplicación de mortero tixotrópico ( reforzado con fibras con una resistencia a compresión > 35 N/mm2), de retracción compensada apto para reparaciones en elementos verticales y horizontales. El recubrimiento mínimo de las armaduras será de 2 cm., con un espesor medio de 3 cm., acabado talochado a buena vista. SIKA MONOTOP 442 MULTI FLOW
+En caso de que la sección a reparar sea considerable se podrá encofrar y verter microhormigón material fluido y de alta resistencia de retracción compensada con una resistencia de 50 N/mm2 a compresión. Medida la longitud ejecutada.
+
+|
+~T|6.08|Formación de pendientes de como mínimo 1,5% (hasta 5%) con mortero de cemento predosificado M-75 tipo VALSEC apto para pavimentos, nivelación y rellenos, hidrófugado, de espesor mínimo 40 mm. I./ media caña de 5 x 5 cm de EMACO R352 Rapid, y/o p.p. de sellado previo con masilla de poliuretano altamente elástica Masterflex 474 y fondo de junta Masterflex FJ (rondo celular de polietileno) en encuentros entre distintos materiales.
+
+Nota: Conseguir las caidas necesarias para la posterior correcta evacuación de las aguas pluviales, con un recrecido minimo de 1,5 cm en perimetro del sumidero y una pendiente minima del 2%, dejandolo listo para la impermeablización. Medidos la superficie ejecutados.
+|
+~T|6.09|Suministro y colocación de perfil de aluminio lacado e_1,2 mm. en color parecido al canto de jorjado a decidir por la D.F., colocado en encuentro de fachada con balcón y atornillado al suelo del mismo con tirafondo inoxidable. la pieza será de aprox 20 cm doblada con un ángulo de 45º y acabada en un baqueton. se colocara Bajo la pieza de peldaño de gres previo a la colocación del impermeabilización. Media la longitud ejecutada.|
+~T|6.10|Imprimación impermeabilizante sobre capa compresora, mediante aplicación de lamina flexible Dry80 de Revestech, compuesto por una doble hoja de EVAC con ambas caras revestidas
+de fibras de poliéster para impermeabilización, incluso p.p. de refuerzo mínimo de 20 cm en encuentro con paramentos verticales, unión y sellado por soldadura con aire caliente o con adhesivo SEAL PLUS y banda de unión perimetral DRY80 Banda 50 , Refuerzos de esquinas con DRY80 Cornerin y DRY80 Cornerout. Medida la superficie ejecutada.
+
+Nota: Sobre superficie debe estar seca y limpia de cualquier resto de grasa, polvo o materiales no adheridos, con el fin de obtener una buena penetración y adherencia.
+|
+~T|6.11|Suministro y colocación de nueva baldosa Pietra di Firence de Natucer,color a decidir por la D.F., antideslizante y antiheladas para exteriores, incluso p.p. de pieza de goterón,  tomada con cemento cola flexible C2 (a realizar según especificaciones técnicas del fabricante.) se dejaran 4 mm de separación entre las baldosas para hacer el rejunteo con weber color flex. incluso rejunteo comprobación de la superficie de soporte, replanteo,(diseño geométrico a replantear "in situ") crucetas de pvc, formación de juntas perimetrales continuas de anchura no menor a 5 mm en los limites de paredes, eliminación de material sobrante y limpieza. Medida la superficie ejecutada.
+
+Nota: en la zona de puertas de balcones se le colocará un rodapié del mismo material del suelo en lo huecos que pudieran quedar a la hora de realizar las nuevas pendientes (incluido en el precio).|
+~T|6.12|Suministro y colocación de RODAPIE de baldosa Pietra di Firence de Natucer,color a decidir por la D.F., antideslizante y antiheladas para exteriores,  tomada con cemento cola flexible C2 (a realizar según especificaciones técnicas del fabricante.) se dejaran 4 mm de separación entre las baldosas para hacer el rejunteo con weber color flex. incluso rejunteo comprobación de la superficie de soporte, replanteo,(diseño geométrico a replantear "in situ") crucetas de pvc, formación de juntas perimetrales continuas de anchura no menor a 5 mm en los limites de paredes, eliminación de material sobrante y limpieza. Medida la superficie ejecutada.|
+~T|6.13|Sistema Anti-grietas Sto - Mortero armadura orgánico con malla de refuerzo + Revoque orgánico. Sistema orgánico con elevada resistencia a la formación de grietas, resistencia al impacto de cuerpos duros de 6,5 joules, compuesto por:
+
+Aplicación de una mano de imprimación sin disolventes, StoPrim Micro, a base de micro emulsión de silicona, endurecedor de la base y de gran poder de penetración.
+Aplicación de mortero armadura LIBRE DE CEMENTO, StoArmat Classic. Con el mortero armadura aún fresco, colocación de perfiles especiales de refuerzo como StoPerfil Antigoteo y StoMalla Cantonera, así como la malla de armadura, Sto Malla de Fibra de Vidrio, embebiendo y presionando las mismas con la llana. Se solaparán las juntas de malla 10cm. 
+Aplicación de capa de acabado de revoque orgánico, libre de Cemento, Stolit K 2,00 con tamaño del grano de 2,0 mm, con 800 tonalidades a elegir según Carta de Color - StoColor System. La aplicación del mortero Stolit K 2,00 se realiza mediante llana metálica y el remolinado con llana lisa de PVC (sin tornillos). El espesor total de la capa del sistema anti-grietas será de 5,0 mm.|
+~T|6.14|Suministro y colocación de de barandilla metálica de llanta de ACERO INXIDABLE AISI 316 de compuesto por:
+- BARROTES VERTICAL. MEDIANTE Pletinas de 50 x 10 x 1.350 mm, CADA 120 mm. sobre soporte L SOLDADAS EN TALLER. 
+- SUJECIÓN A FORJADO MEDIANTE: Pletina en "L" de 150x150 de largo cada patilla y 70 mm de ancho. y 10 mm de espesor, para sujetarlo a frente  y parte superior de forjado
+- PASAMANOS SUPERIOR ¢50mm. DE INOX 316, SOLDADA A BARROTES VERTICALES,  SOLDADAS EN TALLER.
+
+La barandilla estará anclada a frente de forjado mediante tornillería de anclaje y resina  Hilti HIT-RE 500. Elaborada en taller y montada en obra. incluido p.p. de soldadura, medios auxiliares, soldaduras "in-situ" y pulido "in-situ" (si fuera necesario) tapones superiores e inferiores de inoxidable en los extremos del poste. Totalmente terminada y lista para pintar. Medida la longitud ejecutada.|
+~T|6.15|Enfoscado maestreado sin talochar en techos de balcones con mortero cemento hidrófugo m-40 (1:6)  Incluso p/p de replanteo, nivelación y aplomado, recibido de cercos y recercaos, mermas y roturas, enjarjes, mochetas, ejecución de encuentros y limpieza. Medida la superficie ejecutada.
+
+Nota: previa al enfoscado en caso de aparecer zonas de elementos de ferralla con oxidación, se deberá tratar la superficie (incluido en este precio) mediante raspado del óxido existente con cepillo y protección para elementos de acero con imprimación anticorrosiva a base de resina epoxi y fosfato de zinc, aplicada en dos manos (100 micras), y espolvoreado con sílice o relleno de mortero aditivado con resinas especificas.|
+~T|6.16|Preparación y pintado de TECHOS DE BALCONES mediante Pintura anticarbonatación para exteriores, a base de dos manos de acabado sobre una de imprimación, pintura de color blanco, Incluso p/p de limpieza del soporte, protección de carpintería y vidriería. Medida la superficie ejecutada.|
+~T|6.17|Suministro y montaje de lamas en balcones con placas fenólicas FUNDERMAX “MAX EXTERIOR 0702 NT – NIGHT BLUE” de espesor 10 mm – clasificación al fuego B s2 d0 – color en ambas caras de la placa,  con superficie decorativa de acrilo-poliuretano doblemente endurecida (no melamínica), y propiedades antigraffiti durante toda su vida útil. Clasificación 4-5 en el ensayo de resistencia a la intemperie artificial – según Norma EN 438-2:29 y escala de grises EN 20105-A2, valor recogido en la garantía decenal de proyecto, con certificaciones ambientales FSC, PEFC, HQE y EPD, así como las certificaciones en gestión de calidad ISO 9001, ISO 14001, BS OHSAS 18001 y EN 16001. Fijado mecánicamente a estructura de pies verticales cada 1300 mm.  Categoría-I  de uso frente a impacto (ETAG 034-1). Se contemplará la anchura total que componen todas las lamas (90 cm. de ancho) para conformar la barandilla (ml de 6 lamas juntas).|
+~T|7.01|Sustitución de piedra caliza gris de 60x40x3 cm., en textura natural, recibida con mortero de cemento CEM II/B-P 32,5 N y arena de río M-10, aplicación de resina puente de unión con el hormigón y paramentos existentes, zarpeo previo con cemento en paramentos a aplacar, colocación con mortero de agarre y anclaje oculto, formado con varilla de acero inoxidable. i/cajas en muro, gancho ac.inox. rejuntado con lechada de cemento blanco BL 22,5 X y limpieza, s/NTE-RPC-8. Medida la superficie ejecutada.|
+~T|7.02|Rascado de pinturas en paredes de planta baja, hasta la completa eliminación de las mismas, ejecutado por procedimiento manual mediante rasqueta y espátula, incluso retirada y carga de escombros a camión o contenedor. Media la superficie ejecutada.
+|
+~T|7.03|Lijado y posterior pintado de puertas de garaje mediante:
+- Decapado de pinturas o barnices existentes, mediante la aplicación con brocha de 0,29 l/m² de producto decapante en varias capas, y posterior lijado de la superficie con medios mecánicos, mediante lijadora con disco de púas metálicas. Incluso limpieza con agua hasta eliminar los restos del decapante, acopio, retirada y carga manual de restos sobre camión o contenedor.
+- Formación de capa de lasur al agua, para interiores, color RAL 5010, acabado mate, sobre superficie de madera, mediante aplicación de una mano de fondo acuoso protector, insecticida, fungicida y termicida, transparente e incoloro, (rendimiento: 0,22 l/m²), como fijador de superficie, y dos manos de acabado con lasur al agua a poro abierto, a base de resinas alcídicas y resinas acrílicas, (rendimiento: 0,055 l/m² cada mano). Preparación del soporte mediante lijado de su superficie y posterior limpieza, antes de comenzar la aplicación de la mano de imprimación y de cada mano de lasur, encintado y tratamiento de juntas.|
+~T|7.04|Sustitución, desplazamiento y suministro de nuevo porteros automaticos exterioesr, mediante el trabajo compuesto por:
+- Desplazamiento y Modificación de videoportero electrónico en puerta de portal, de 3 pulsaciones, sin camara, nuevo portero en vivinda, incluida la instalación y cableados nuevos completos, mediante desplazamiento situandose a altura entre 90 y 120 cm. Medida la unidad instalada y en funcionamiento.
+- Saneado y modificación en la zona exterior del portal, de hueco para portero automático, con apertura de nuevo hueco para el traslado de portero, rellenado de huecos y remate de mochestas mediante aplicación de estuco calizo incluido abujardado del mismo, dejando textura idéntico. Medida la unidad ejecutada.|
+~T|7.05|Formación de nuevo drenaje perimetral en zona ajardinada compuesto por, movimientos de tierra, tubo drenante y posterior relleno de grava, mediante:
+Zanja drenante en perímetro de muro en contacto con el terreno, con una pendiente mínima del 0,50%, para captación de las aguas que se filtran a través de la superficie del terreno, en cuyo fondo se dispone un tubo ranurado de PVC de doble pared, la exterior corrugada y la interior lisa, color teja RAL 8023, con ranurado a lo largo de un arco de 220° en el valle del corrugado, para drenaje, rigidez anular nominal 4 kN/m², de 200 mm de diámetro, según UNE-EN 13476-1, longitud nominal 6 m, unión por copa con junta elástica de EPDM, colocado sobre solera de hormigón en masa HM-20/B/20/I, de 10 cm de espesor, en forma de cuna para recibir el tubo y formar las pendientes, con relleno lateral y superior hasta 25 cm por encima de la generatriz superior del tubo con grava filtrante sin clasificar, todo ello envuelto en un geotextil no tejido compuesto por fibras de poliéster unidas por agujeteado, con una resistencia a la tracción longitudinal de 1,63 kN/m, una resistencia a la tracción transversal de 2,08 kN/m, una apertura de cono al ensayo de perforación dinámica según UNE-EN ISO 13433 inferior a 27 mm, resistencia CBR a punzonamiento 0,4 kN y una masa superficial de 200 g/m². Incluso lubricante para montaje.|
+~T|7.06|Arqueta de paso, registrable, enterrada, construida con fábrica de ladrillo cerámico macizo, de 1/2 pie de espesor, recibido con mortero de cemento, industrial, M-5, de dimensiones interiores 60x60x75 cm, sobre solera de hormigón en masa HM-30/B/20/I+Qb de 15 cm de espesor, formación de pendiente mínima del 2%, con el mismo tipo de hormigón, enfoscada y bruñida interiormente con mortero de cemento, industrial, con aditivo hidrófugo, M-15 formando aristas y esquinas a media caña, cerrada superiormente con marco y tapa de fundición clase B-125 según UNE-EN 124; previa excavación con medios manuales y posterior relleno del trasdós con material granular. Incluso mortero para sellado de juntas y colector de conexión de PVC, de tres entradas y una salida, con tapa de registro, para encuentros. Medida la unidad ejecutada.
+
+|
+~T|7.07|Suministro y colocación de placa indentificativa en piedra arenisca, con identica dimensiones y gravado situado en el cabecero de puerta de portal. incluido p.p. de tornillería, chapas y anclajes de refuerzo necesarias para su correcta colocación. Medida la unidad ejecutadas.|
+~T|7.08|Preparación y pintado deparedes de planta baja mediante Pintura acrílica con siloxanos para exteriores, a base de dos manos de acabado sobre una de imprimación, pintura de color blanco, Incluso p/p de limpieza del soporte, protección de carpintería y vidriería. Medida la superficie ejecutada.|
+~T|8.01|Conjunto de pruebas de servicio a realizar por laboratorio acreditado en el área técnica correspondiente, para comprobar el correcto funcionamiento de las siguientes instalaciones: TV/FM, fontanería, saneamiento e instalación de gas. Incluso informe de resultados. Partida alzada.|
+~T|8.02|Ensayo e informe de adherencia del cerámico existente al soporte, según UNE-EN 1348/2008 (adhesivos para baldosas cerámicas, determinación de la adherencia a la tracción de los adhesivos cementosos), en base al cual se deberan aportar las conclusiones y recomendaciones del fabricante del sistema SATE previsto por dto. técnico BEISSIER.
+Número de muestras = 6
+Preparación: Corte con corona de 50 mm o con radial un cuadrado de
+lado 50 mm.
+Tiempo estimado (días):
+- Preparación = 1
+- Secado = 0
+- Ensayo = 1
+Observaciones: Prueba de laboratorio adaptada a "in-situ".
+Nota: A realizar por LABORATORIO acreditado tipo Control de Calidad en la Edificación del Gobierno Vasco - Área Mecánica, Applus o iTEC.|
+~T|9#|
+|
+~T|9.01|PARTIDA ALZADA, en base al ESTUDIO DE GESTIÓN DE RESIDUOS DE CONSTRUCCIÓN Y DEMOLICIÓN y según lo dispuesto por el contratista de las obras en el PLAN DE GESTIÓN DE RESIDUOS DE CONSTRUCCIÓN Y DEMOLICIÓN. VALORACIÓN DEL COSTE PREVISTO DE LA GESTIÓN DE LOS RESIDUOS DE CONSTRUCCIÓN Y DEMOLICIÓN. COSTE DE TRATAMIENTO DE RCD:
+RCD de Nivel I (Tierras y pétreos de la excavación) y RCD de Nivel II (RCD de naturaleza pétrea, RCD de naturaleza no pétrea y RCD potencialmente peligrosos) + RESTO DE COSTES DE GESTIÓN
+TOTAL COMPUESTA ENTRE OTROS POR:
+
+-Transporte de tierras con camión a vertedero específico, instalación de tratamiento de residuos de
+construcción y demolición externa a la obra o centro de valorización o eliminación de residuos; o similar.en planta por gestor autorizado por el Departamento de Medio Ambiente de la CAPV Y recogidas en contenedores de distintos formatos.
+-Clasificación a pie de obra de los residuos de construcción y/o demolición, separándolos en fracciones (hormigón, cerámicos, metales, maderas, vidrios, plásticos, papeles o cartones y residuos peligrosos), dentro de la obra en la que se produzcan; o similar
+-Transporte de residuos inertes de ladrillos, tejas y materiales cerámicos, producidos en obras de construcción y/o demolición, con contenedor, a vertedero específico, instalación de tratamiento de residuos de construcción y demolición externa a la obra o centro de valorización o eliminación de residuos; o similar. en planta por gestor autorizado por el Departamento de Medio Ambiente de la CAPV,y recogidas en contenedores de distintos formatos.
+-Bidón para residuos peligrosos, apto para almacenar tierras y piedras, residuos metálicos contaminados, etc. que contienen sustancias peligrosas
+-Transporte de bidón con residuos peligrosos a vertedero específico, instalación de tratamiento de residuos de construcción y demolición externa a la obra o centro de valorización o eliminación de residuos.
+-Y Entrega a gestor autorizado de residuos peligrosos de bidón con residuos peligrosos procedentes de la construcción o demolición, incluso coste de vertido. Etc.
+Incluye costes administrativos y documentación justificativa de IKSeem según Decreto 183/2012, de 25 de septiembre, entrega de (DSC, Documentos de Seguimiento y Control), así como otros certificados.
+
+POR LA UBICACIÓN SINGULAR DE LA OBRA Y LA IMPOSIBILIDAD DE COLOCAR DIFERENTES CONTENEDORES DE RECOGIDA, EL CONTENEDOR CON TODO EL RESIDUO MEZCLADO SE TRASLADARÁ A PLANTA DE SEPARACIÓN DE RESIDUOS, Y POSTERIOR ENTREGA DE LOS DSC Y DCS CORRESPONDIENTES DE LOS RESIDUOS.
+
+|
+~T|9.02|Elaboración de Plan de Gestión de residuos para la obra, realizado por la empresa de Prevención. Tramitación de la apertura del centro de trabajo en el Gobierno Vasco para la gestión de documenación justificativa de IKSeem. Partida Alzada.|
+~M|1#\1.01|1\1\|1|\\1\\\\|
+~M|1#\1.02|1\2\|1|\\1\\\\|
+~M|1#\495|1\3\|1|\\1\\\\|
+~M|2#\2.01|2\1\|1|\\1\\\\|
+~M|2#\2.02|2\2\|1|\\1\\\\|
+~M|2#\2.03|2\3\|15|\\1\15\\\|
+~M|2#\2.04|2\4\|1|\\1\\\\|
+~M|2#\2.05|2\5\|1|\\1\\\\|
+~M|2#\2.06|2\6\|1|\\1\\\\|
+~M|2#\2.07|2\7\|46.21|\\3\11.5\\\\\1\7.5\\\\\0.1\42.1\\\|
+~M|2#\2.08|2\8\|1|\\1\\\\|
+~M|2#\2.09|2\9\|4|\\4\\\\|
+~M|2#\2.10|2\10\|4|\\4\\\\|
+~M|2#\2.11|2\11\|644.71|\\1\12.66\\11.2\\\1\\5.8\11.2\\\1\\2.11\11.2\\\1\10.19\\11.2\\\1\\7.31\11.2\\\1\\5.77\11.2\\\1\2.44\\11.2\\\1\\6.05\11.2\\\0.1\586.19\\\|
+~M|2#\2.12|2\12\|293.05|\\0.5\12.66\\11.2\\\0.5\\5.8\11.2\\\0.5\\2.11\11.2\\\0.5\10.19\\11.2\\\0.5\\7.31\11.2\\\0.5\\5.77\11.2\\\0.5\2.44\\11.2\\\0.5\\6.05\11.2\|
+~M|2#\2.13|2\13\|293.05|\\0.5\12.66\\11.2\\\0.5\\5.8\11.2\\\0.5\\2.11\11.2\\\0.5\10.19\\11.2\\\0.5\\7.31\11.2\\\0.5\\5.77\11.2\\\0.5\2.44\\11.2\\\0.5\\6.05\11.2\|
+~M|2#\2.14|2\14\|252.66|\123X153 (12 ud.)\24\1.23\\\\\24\\1.53\\\93X230 (6 ud.)\12\0.93\\\\\12\\2.3\\\211X135 (3 ud.)\6\2.11\\\\\6\\1.35\\\247X153 (3ud.)\6\2.47\\\\\6\\1.53\\\118X153 (12ud.)\24\1.18\\\\\24\\1.53\\\78x153 (3 ud.)\6\0.78\\\\\6\\1.53\\\150x250 (3 ud.)\6\1.5\\\\\6\\2.5\\|
+~M|2#\2.15|2\15\|252.66|\123X153 (12 ud.)\24\1.23\\\\\24\\1.53\\\93X230 (6 ud.)\12\0.93\\\\\12\\2.3\\\211X135 (3 ud.)\6\2.11\\\\\6\\1.35\\\247X153 (3ud.)\6\2.47\\\\\6\\1.53\\\118X153 (12ud.)\24\1.18\\\\\24\\1.53\\\78x153 (3 ud.)\6\0.78\\\\\6\\1.53\\\150x250 (3 ud.)\6\1.5\\\\\6\\2.5\\|
+~M|2#\2.16|2\16\|558.37|\\1\12.66\\9.7\\\1\\5.8\9.7\\\1\\2.11\9.7\\\1\10.19\\9.7\\\1\\7.31\9.7\\\1\\5.77\9.7\\\1\2.44\\9.7\\\1\\6.05\9.7\\\0.1\507.6\\\|
+~M|2#\2.17|2\17\|60.18|\\1\12.66\\\\\1\\5.8\\\\1\\2.11\\\\1\10.19\\\\\1\\7.31\\\\1\\5.77\\\\1\2.44\\\\\1\\6.05\\\\0.15\52.34\\\|
+~M|2#\2.18|2\18\|60.18|\\1\12.66\\\\\1\\5.8\\\\1\\2.11\\\\1\10.19\\\\\1\\7.31\\\\1\\5.77\\\\1\2.44\\\\\1\\6.05\\\\0.15\52.34\\\|
+~M|2#\2.19|2\19\|78.04|\123X153 (12 ud.)\24\1.23\\\\93X230 (6 ud.)\6\0.93\\\\211X135 (3 ud.)\3\2.11\\\\118X153 (12ud.)\12\1.18\\\\78x153 (3 ud.)\3\0.78\\\\150x250 (3 ud.)\3\1.5\\\\\0.25\62.43\\\|
+~M|2#\2.20|2\20\|9.63|\247X153 (3ud.)\3\2.47\\\\\0.3\7.41\\\|
+~M|2#\2.21|2\21\|269.46|\123X153 (12 ud.)\24\1.23\\\\\24\\1.53\\\93X230 (6 ud.)\12\0.93\\\\\12\\2.3\\\211X135 (3 ud.)\6\2.11\\\\\6\\1.35\\\247X153 (3ud.)\6\2.47\\\\\6\\1.53\\\118X153 (12ud.)\24\1.18\\\\\24\\1.53\\\78x153 (3 ud.)\6\0.78\\\\\6\\1.53\\\150x250 (3 ud.)\6\1.5\\\\\6\\2.5\\\\112\0.15\\\|
+~M|2#\2.22|2\22\|60.18|\\1\12.66\\\\\1\\5.8\\\\1\\2.11\\\\1\10.19\\\\\1\\7.31\\\\1\\5.77\\\\1\2.44\\\\\1\\6.05\\\\0.15\52.34\\\|
+~M|2#\2.32|2\23\|24|\\8\3\\\|
+~M|3#\3.01|3\1\|3|\\3\\\\|
+~M|3#\3.02|3\2\|42|\\42\\\\|
+~M|5#\5.01|4\1\|1|\\1\\\\|
+~M|5#\5.02|4\2\|122.8|\\1\122.8\\\|
+~M|5#\5.03|4\3\|10|\\10\\\\|
+~M|5#\5.04|4\4\|10|\\10\\\\|
+~M|5#\5.05|4\5\|122.8|\\1\122.8\\\|
+~M|6#\6.01|5\1\|11.4|\\4\2.85\\\|
+~M|6#\6.02|5\2\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.03|5\3\|29.47|\\3\8.93\\\\\0.1\26.79\\\|
+~M|6#\6.04|5\4\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.06|5\5\|33.66|\\3\10.2\\\\\0.1\30.6\\\|
+~M|6#\6.08|5\6\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.09|5\7\|14.8|\\4\2.83\\\\\4\\0.87\\|
+~M|6#\6.10|5\8\|50.11|\\3\7.56\1.71\\\\3\0.2\8.93\\\\0.15\39.78\\\|
+~M|6#\6.11|5\9\|46.74|\\3\7.56\1.71\\\\0.2\39.78\\\|
+~M|6#\6.12|5\10\|29.47|\\3\8.93\\\\\0.1\26.79\\\|
+~M|6#\6.13|5\11\|33.66|\\3\10.2\\\\\0.1\30.6\\\|
+~M|6#\6.14|5\12\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.17|5\13\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.15|5\14\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|6#\6.16|5\15\|44.75|\\3\7.56\1.71\\\\0.15\39.78\\\|
+~M|7#\7.01|6\1\|29.88|\\1\\5.8\1.5\\\1\\2.11\1.5\\\1\10.19\\1.5\\\0.1\27.15\\\|
+~M|7#\7.02|6\2\|10.22|\\1\10.22\\\|
+~M|7#\7.03|6\3\|19.34|\\1\2.36\\2.4\\\1\5.7\\2.4\|
+~M|7#\7.04|6\4\|1|\\1\\\\|
+~M|7#\7.05|6\5\|25.61|\\1\10.19\\\\\1\\7.31\\\\1\\5.77\\\\0.1\23.36\\\|
+~M|7#\7.06|6\6\|1|\\1\\\\|
+~M|7#\7.07|6\7\|1|\\1\\\\|
+~M|7#\7.08|6\8\|35.62|\\1\\7.31\1.5\\\1\\5.77\1.5\\\1\2.44\\1.5\\\1\\6.05\1.5\\\0.1\32.45\\\|
+~M|8#\8.01|7\1\|1|\\1\\\\|
+~M|8#\8.02|7\2\|1|\\1\\\\|
+~M|9#\9.01|8\1\|1|\\1\\\\|
+~M|9#\9.02|8\2\|1|\\1\\\\|
+~M|10#\10.01|9\1\|1|\\1\\\\|
+~M|10#\10.02|9\2\|1|\\1\\\\|
