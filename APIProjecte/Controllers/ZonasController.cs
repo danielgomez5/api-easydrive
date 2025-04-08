@@ -272,5 +272,13 @@ namespace APIProjecte.Controllers
             }
             return Ok(zona);
         }
+
+        // GET: api/top-zones
+        [Route("api/top-zones")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Zona>>> GetTopZones()
+        {
+            return await _context.Zonas.Include(x => x.Viatges).OrderByDescending(x => x.Viatges.Count).Take(10).ToListAsync();
+        }
     }
 }
