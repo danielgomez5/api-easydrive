@@ -267,53 +267,61 @@ namespace APIProjecte.Controllers
             return NotFound("El filtre que intentes utilitzar no està disponible...");
         }
 
-        //[Route("api/usuari_image/{id}")]
-        //[HttpPut]
-        //public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
-        //{
-        //    Usuari user = _context.Usuaris.Where(x=>x.Dni == id).FirstOrDefault();
+        [Route("api/usuari_image/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutUsuariImage(string id, IFormFile? f_perfil, IFormFile? f_tecnica)
+        {
+            Usuari user = _context.Usuaris.Where(x => x.Dni == id).FirstOrDefault();
 
-        //    if (user == null) 
-        //    {
-        //        return NotFound();
-        //    }
+            if (user == null)
+            {
+                return NotFound();
+            }
 
-        //    if (f_perfil != null)
-        //    {
-        //        using (var memoryStream = new MemoryStream())
-        //        {
-        //            await f_perfil.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-        //            user.FotoPerfil = memoryStream.ToArray();  // Convertir el archivo a byte[]
-        //        }
-        //    }
+            if (f_perfil != null)
+            {
+                var perfilFileName = $"{Guid.NewGuid()}_{f_perfil.FileName}";
+                var perfilPath = Path.Combine("Photos", perfilFileName);
 
-        //    if (f_tecnica != null)
-        //    {
-        //        using (var memoryStream = new MemoryStream())
-        //        {
-        //            await f_tecnica.CopyToAsync(memoryStream);  // Leer el archivo en memoria
-        //            user.FotoCarnet = memoryStream.ToArray();  // Convertir el archivo a byte[]
-        //        }
-        //    }
-        //    _context.Entry(user).State = EntityState.Modified;
+                using (var stream = new FileStream(perfilPath, FileMode.Create))
+                {
+                    await f_perfil.CopyToAsync(stream);
+                }
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!UsuariExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+                user.FotoPerfil = perfilFileName;
+            }
 
-        //    return NoContent();
-        //}
+            if (f_tecnica != null)
+            {
+                var carnetFileName = $"{Guid.NewGuid()}_{f_tecnica.FileName}";
+                var carnetPath = Path.Combine("Photos", carnetFileName);
+
+                using (var stream = new FileStream(carnetPath, FileMode.Create))
+                {
+                    await f_tecnica.CopyToAsync(stream);
+                }
+
+                user.FotoCarnet = carnetFileName;
+            }
+                _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UsuariExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
     }
 }
