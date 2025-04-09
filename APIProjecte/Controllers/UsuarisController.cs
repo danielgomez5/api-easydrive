@@ -315,5 +315,19 @@ namespace APIProjecte.Controllers
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes, "image/jpeg");
         }
+
+        [Route("api/usuari_login")]
+        [HttpGet]
+        public async Task<ActionResult<Usuari>> GetUsuariLogin(string email, string password)
+        {
+            var usuari = _context.Usuaris.Where(x=>x.Email == email && x.PasswordHash == password).FirstOrDefault();
+
+            if (usuari == null)
+            {
+                return NotFound();
+            }
+
+            return usuari;
+        }
     }
 }
