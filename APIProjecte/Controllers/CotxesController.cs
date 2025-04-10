@@ -161,11 +161,11 @@ namespace APIProjecte.Controllers
         {
             if (filtraPer == 1)
             {
-                return await _context.Cotxes.Where(x => x.Matricula.StartsWith(filtre)).OrderBy(x => x.Matricula).ToListAsync();
+                return await _context.Cotxes.Include(x => x.IdUsuaris).Where(x => x.Matricula.StartsWith(filtre)).OrderBy(x => x.Matricula).ToListAsync();
             }
             else if (filtraPer == 2)
             {
-                return await _context.Cotxes.Where(x => x.Marca.StartsWith(filtre)).OrderBy(x => x.Marca).ThenBy(x => x.Model).ToListAsync();
+                return await _context.Cotxes.Include(x => x.IdUsuaris).Where(x => x.Marca.StartsWith(filtre)).OrderBy(x => x.Marca).ThenBy(x => x.Model).ToListAsync();
             }
 
             return NotFound("El filtre que intentes utilitzar no està disponible...");
@@ -173,11 +173,11 @@ namespace APIProjecte.Controllers
 
         // PUT: api/cotxe/id
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Route("api/cotxe_ftecnic/{id}")]
+        [Route("api/cotxe_ftecnic/{matricula}")]
         [HttpPut]
-        public async Task<IActionResult> PutCotxeFitxaTecnica(string id, IFormFile f_tecnic)
+        public async Task<IActionResult> PutCotxeFitxaTecnica(string matricula, IFormFile f_tecnic)
         {
-            Cotxe cotxe = _context.Cotxes.Where(x => x.Matricula == id).FirstOrDefault();
+            Cotxe cotxe = _context.Cotxes.Where(x => x.Matricula == matricula).FirstOrDefault();
             if (cotxe == null)
             {
                 return NotFound();
@@ -185,15 +185,29 @@ namespace APIProjecte.Controllers
 
             if (f_tecnic != null)
             {
-                var perfilFileName = $"{Guid.NewGuid()}_{f_tecnic.FileName}";
+                // Generamos un nombre único para el archivo, pero obtenemos solo el nombre del archivo (sin la ruta completa)
+                var perfilFileName = $"{Guid.NewGuid()}_{Path.GetFileName(f_tecnic.FileName)}";  // Usa Path.GetFileName() para obtener solo el nombre
+
+                // Guardamos el archivo en la carpeta "Files" o donde sea necesario
                 var perfilPath = Path.Combine("Files", perfilFileName);
 
+                // Si necesitas verificar la extensión (aunque aceptamos cualquier tipo de archivo)
+                var validExtensions = new[] { ".pdf", ".jpg", ".jpeg", ".png", ".docx", ".txt", ".xlsx", ".csv" };
+                var fileExtension = Path.GetExtension(f_tecnic.FileName).ToLower();
+
+                if (!validExtensions.Contains(fileExtension))
+                {
+                    return BadRequest("El tipo de archivo no es válido.");
+                }
+
+                // Guardamos el archivo en el sistema de archivos
                 using (var stream = new FileStream(perfilPath, FileMode.Create))
                 {
                     await f_tecnic.CopyToAsync(stream);
                 }
 
-                cotxe.FotoFitxaTecnica = perfilFileName;
+                // Guardamos solo el nombre del archivo en la propiedad correspondiente de tu modelo
+                cotxe.FotoFitxaTecnica = perfilFileName;  // Solo se guarda el nombre, no la ruta completa
             }
 
             _context.Entry(cotxe).State = EntityState.Modified;
@@ -204,7 +218,7 @@ namespace APIProjecte.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CotxeExists(id))
+                if (!CotxeExists(matricula))
                 {
                     return NotFound();
                 }
@@ -216,6 +230,8 @@ namespace APIProjecte.Controllers
 
             return NoContent();
         }
+
+
 
     }
 }

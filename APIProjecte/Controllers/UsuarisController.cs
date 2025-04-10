@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIProjecte.Models;
 using APIProjecte.Models.DTOs;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.Data;
 
 namespace APIProjecte.Controllers
 {
@@ -78,6 +80,8 @@ namespace APIProjecte.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuari>> PostUsuari([FromBody] Usuari usuari)
         {
+            var passwordHasher = new PasswordHasher<Usuari>();
+            usuari.PasswordHash = passwordHasher.HashPassword(usuari, usuari.PasswordHash);
 
             _context.Usuaris.Add(usuari);
             try
@@ -301,30 +305,22 @@ namespace APIProjecte.Controllers
             return NoContent();
         }
 
-        [Route("api/usuari_image/{filename}")]
-        [HttpGet]
-        public IActionResult GetImage(string filename)
-        {
-            var filePath = Path.Combine("Photos", filename);
-
-            if (!System.IO.File.Exists(filePath))
-            {
-                return NotFound();
-            }
-
-            var fileBytes = System.IO.File.ReadAllBytes(filePath);
-            return File(fileBytes, "image/jpeg");
-        }
-
         [Route("api/usuari_login")]
-        [HttpGet]
-        public async Task<ActionResult<Usuari>> GetUsuariLogin(string email, string password)
+        [HttpPost]
+        public async Task<ActionResult<Usuari>> Login([FromBody] LoginRequest loginRequest)
         {
-            var usuari = _context.Usuaris.Where(x=>x.Email == email && x.PasswordHash == password).FirstOrDefault();
-
+            Usuari usuari = await _context.Usuaris.FirstOrDefaultAsync(x => x.Email == loginRequest.Email);
             if (usuari == null)
             {
-                return NotFound();
+                return NotFound("Usuario no encontrado");
+            }
+
+            var passwordHasher = new PasswordHasher<Usuari>();
+            var result = passwordHasher.VerifyHashedPassword(usuari, usuari.PasswordHash, loginRequest.Password);
+
+            if (result == PasswordVerificationResult.Failed)
+            {
+                return Unauthorized("Contraseña incorrecta");
             }
 
             return usuari;

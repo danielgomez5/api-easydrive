@@ -2,6 +2,7 @@
 
 using APIProjecte.Controllers;
 using APIProjecte.Models;
+using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,22 @@ builder.Services.AddControllers()
 
 var app = builder.Build();
 
+
+// Fem estàtica la carpeta de fotos per poder accedir des-de fora
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Photos")),
+    RequestPath = "/Photos"
+});
+
+// Fem estàtica la carpeta d'arxius per poder accedir des-de fora
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Files")),
+    RequestPath = "/Files"
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
