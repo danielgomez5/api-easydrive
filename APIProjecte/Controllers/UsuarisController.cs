@@ -325,5 +325,43 @@ namespace APIProjecte.Controllers
 
             return usuari;
         }
+
+        [Route("api/usuari/canvi-contrasenya")]
+        [HttpPut]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request, string id = null)
+        {
+            Usuari usuari;
+
+            if (id == null)
+            {
+                usuari = await _context.Usuaris.FirstOrDefaultAsync(u => u.Email == "admin@easydrive.com");
+                if (usuari == null)
+                {
+                    return NotFound("Administrador no trobat.");
+                }
+            }
+            else
+            {
+                usuari = await _context.Usuaris.FindAsync(id);
+                if (usuari == null)
+                {
+                    return NotFound("Usuari no trobat.");
+                }
+            }
+
+            var passwordHasher = new PasswordHasher<Usuari>();
+            usuari.PasswordHash = passwordHasher.HashPassword(usuari, request.NovaContrasenya);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al guardar els canvis: {ex.Message}");
+            }
+
+            return Ok("Contrasenya actualitzada correctament.");
+        }
     }
 }
