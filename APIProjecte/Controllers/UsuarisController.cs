@@ -363,5 +363,28 @@ namespace APIProjecte.Controllers
 
             return Ok("Contrasenya actualitzada correctament.");
         }
+
+        [HttpPost("api/usuari-cotxe")]
+        public IActionResult AssignarCotxeAUsuari([FromBody] UsuariCotxeDTO dto)
+        {
+            Usuari usuari = _context.Usuaris
+                .Include(u => u.Matriculas)
+                .FirstOrDefault(u => u.Dni == dto.DniUsuari);
+
+            Cotxe cotxe = _context.Cotxes
+                .Include(c => c.IdUsuaris)
+                .FirstOrDefault(c => c.Matricula == dto.MatriculaCotxe);
+
+            if (usuari == null || cotxe == null)
+                return NotFound("Usuari o cotxe no trobat.");
+
+            if (!usuari.Matriculas.Contains(cotxe))
+            {
+                usuari.Matriculas.Add(cotxe);
+                _context.SaveChanges();
+            }
+
+            return NoContent();
+        }
     }
 }
