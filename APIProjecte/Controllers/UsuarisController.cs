@@ -386,5 +386,35 @@ namespace APIProjecte.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("api/usuari-pagament")]
+        public async Task<ActionResult<Usuari>> PostDadesPagament([FromBody] DadesPagament d)
+        {
+
+            _context.DadesPagaments.Add(d);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (DadesPagamentExists(d.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return Ok(d);
+        }
+
+        private bool DadesPagamentExists(int id)
+        {
+            return _context.DadesPagaments.Any(e => e.Id == id);
+        }
+
     }
 }
