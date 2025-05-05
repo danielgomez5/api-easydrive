@@ -77,7 +77,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/reserva")]
         [HttpPost]
-        public async Task<ActionResult<Reserva>> PostReserva(Reserva reserva)
+        public async Task<ActionResult<Reserva>> PostReserva([FromBody] Reserva reserva)
         {
             _context.Reservas.Add(reserva);
             await _context.SaveChangesAsync();

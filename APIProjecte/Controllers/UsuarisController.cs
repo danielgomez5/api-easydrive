@@ -48,7 +48,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/usuari/{id}")]
         [HttpPut]
-        public async Task<IActionResult> PutUsuari(string id, Usuari usuari)
+        public async Task<IActionResult> PutUsuari(string id, [FromBody] Usuari usuari)
         {
             if (id != usuari.Dni)
             {
@@ -386,6 +386,44 @@ namespace APIProjecte.Controllers
 
             return NoContent();
         }
+
+        [Route("api/usuari//del_all/{id_usuari}")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAllUsuari(string id_usuari)
+        {
+            Usuari usuari = await _context.Usuaris.FindAsync(id_usuari);
+            if (usuari == null)
+            {
+                return NotFound();
+            }
+
+      
+            List<Viatge> viatges = _context.Viatges.Where(v => v.IdTaxista == id_usuari).ToList();
+            _context.Viatges.RemoveRange(viatges);
+
+            // Reservas hechas por el usuario
+            List<Reserva> reserves = _context.Reservas.Where(r => r.IdUsuari == id_usuari).ToList();
+            _context.Reservas.RemoveRange(reserves);
+
+            List<Cotxe> cotxesUsuari = _context.Cotxes.Where(cu => cu.IdUsuaris.Where(x => x.Dni == id_usuari) == usuari).ToList();
+            _context.Cotxes.RemoveRange(cotxesUsuari);
+
+            // Datos de pago
+            List<DadesPagament> dadesPagament = _context.DadesPagaments.Where(dp => dp.IdUsuari == id_usuari).ToList();
+            _context.DadesPagaments.RemoveRange(dadesPagament);
+
+            // Relaciones con zones
+            List<Zona> zonesUsuari = _context.Zonas.Where(zu => zu.IdTaxista.Where(x => x.Dni == id_usuari) == usuari).ToList();
+            //_context.Zo.RemoveRange(zonesUsuari);
+
+            // Finalmente, eliminar al usuario
+            _context.Usuaris.Remove(usuari);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
 
         [HttpPost("api/usuari-pagament")]
         public async Task<ActionResult<Usuari>> PostDadesPagament([FromBody] DadesPagament d)
