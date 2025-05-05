@@ -387,42 +387,45 @@ namespace APIProjecte.Controllers
             return NoContent();
         }
 
-        [Route("api/usuari//del_all/{id_usuari}")]
+        [Route("api/usuari/del_all/{id_usuari}")]
         [HttpDelete]
         public async Task<IActionResult> DeleteAllUsuari(string id_usuari)
         {
-            Usuari usuari = await _context.Usuaris.FindAsync(id_usuari);
+            Usuari? usuari = await _context.Usuaris
+                .Include(u => u.Viatges)
+                .Include(u => u.Reservas)
+                .Include(u => u.DadesPagaments)
+                .Include(u => u.IdZonas)
+                .Include(u => u.Matriculas)
+                .FirstOrDefaultAsync(u => u.Dni == id_usuari);
+
             if (usuari == null)
-            {
                 return NotFound();
+
+            ICollection<Zona> zonesRelacionades = usuari.IdZonas.ToList();
+            foreach (Zona zona in zonesRelacionades)
+            {
+                usuari.IdZonas.Remove(zona);
             }
 
-      
-            List<Viatge> viatges = _context.Viatges.Where(v => v.IdTaxista == id_usuari).ToList();
-            _context.Viatges.RemoveRange(viatges);
-
-            // Reservas hechas por el usuario
-            List<Reserva> reserves = _context.Reservas.Where(r => r.IdUsuari == id_usuari).ToList();
-            _context.Reservas.RemoveRange(reserves);
-
-            List<Cotxe> cotxesUsuari = _context.Cotxes.Where(cu => cu.IdUsuaris.Where(x => x.Dni == id_usuari) == usuari).ToList();
+            ICollection<Cotxe> cotxesUsuari = usuari.Matriculas.ToList();
+            foreach (Cotxe cotxe in cotxesUsuari)
+            {
+                usuari.Matriculas.Remove(cotxe);
+            }
             _context.Cotxes.RemoveRange(cotxesUsuari);
 
-            // Datos de pago
-            List<DadesPagament> dadesPagament = _context.DadesPagaments.Where(dp => dp.IdUsuari == id_usuari).ToList();
-            _context.DadesPagaments.RemoveRange(dadesPagament);
+            _context.Viatges.RemoveRange(usuari.Viatges.ToList());
+            _context.Reservas.RemoveRange(usuari.Reservas.ToList());
+            _context.DadesPagaments.RemoveRange(usuari.DadesPagaments.ToList());
 
-            // Relaciones con zones
-            List<Zona> zonesUsuari = _context.Zonas.Where(zu => zu.IdTaxista.Where(x => x.Dni == id_usuari) == usuari).ToList();
-            //_context.Zo.RemoveRange(zonesUsuari);
-
-            // Finalmente, eliminar al usuario
             _context.Usuaris.Remove(usuari);
 
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
 
 
         [HttpPost("api/usuari-pagament")]
