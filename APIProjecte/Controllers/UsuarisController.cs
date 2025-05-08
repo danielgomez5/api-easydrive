@@ -259,8 +259,19 @@ namespace APIProjecte.Controllers
                 return NotFound();
             }
 
+
+
             if (f_perfil != null)
             {
+                if (!string.IsNullOrEmpty(user.FotoPerfil))
+                {
+                    string oldPerfilPath = Path.Combine(Path.Combine(Directory.GetCurrentDirectory(), "Photos"), user.FotoPerfil);
+                    if (System.IO.File.Exists(oldPerfilPath))
+                    {
+                        System.IO.File.Delete(oldPerfilPath);
+                    }
+                }
+
                 var perfilFileName = f_perfil.FileName;
                 var perfilPath = Path.Combine("Photos", perfilFileName);
 
