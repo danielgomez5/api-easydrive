@@ -35,6 +35,8 @@ public partial class EasydriveContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
         modelBuilder.Entity<Cotxe>(entity =>
         {
             entity.HasKey(e => e.Matricula).HasName("PK__Cotxe__30962D14EDF66774");
@@ -125,6 +127,7 @@ public partial class EasydriveContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("estat");
+            entity.Property(e => e.HoraViatge).HasColumnName("hora_viatge");
             entity.Property(e => e.IdEstat).HasColumnName("id_estat");
             entity.Property(e => e.IdUsuari)
                 .HasMaxLength(9)

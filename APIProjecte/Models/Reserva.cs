@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace APIProjecte.Models;
 
@@ -22,6 +23,8 @@ public partial class Reserva
     public string? IdUsuari { get; set; }
 
     public int? IdEstat { get; set; }
+
+    public TimeOnly? HoraViatge { get; set; }
 
     public virtual Estat? IdEstatNavigation { get; set; }
 

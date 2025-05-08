@@ -261,7 +261,7 @@ namespace APIProjecte.Controllers
 
             if (f_perfil != null)
             {
-                var perfilFileName = $"{Guid.NewGuid()}_{f_perfil.FileName}";
+                var perfilFileName = f_perfil.FileName;
                 var perfilPath = Path.Combine("Photos", perfilFileName);
 
                 using (var stream = new FileStream(perfilPath, FileMode.Create))
@@ -274,7 +274,7 @@ namespace APIProjecte.Controllers
 
             if (f_tecnica != null)
             {
-                var carnetFileName = $"{Guid.NewGuid()}_{f_tecnica.FileName}";
+                var carnetFileName = f_tecnica.FileName;
                 var carnetPath = Path.Combine("Photos", carnetFileName);
 
                 using (var stream = new FileStream(carnetPath, FileMode.Create))
@@ -362,6 +362,53 @@ namespace APIProjecte.Controllers
             }
 
             return Ok("Contrasenya actualitzada correctament.");
+        }
+
+        [Route("api/usuari-disponiblitat")]
+        [HttpPut]
+        public async Task<IActionResult> DisponibilitatTaxista(string id, bool dispo)
+        {
+            Usuari user = _context.Usuaris.Where(x => x.Dni == id).FirstOrDefault();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.Disponibilitat = dispo;
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UsuariExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [Route("api/disponiblitat-taxista/{id}")]
+        [HttpGet]
+        public async Task<ActionResult<bool>> GetDispoTaxista(string id)
+        {
+            Usuari user = _context.Usuaris.Where(x => x.Dni == id).FirstOrDefault();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user.Disponibilitat;
         }
 
         [HttpPost("api/usuari-cotxe")]

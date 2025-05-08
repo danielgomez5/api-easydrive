@@ -45,7 +45,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/reserva/{id}")]
         [HttpPut]
-        public async Task<IActionResult> PutReserva(int id, Reserva reserva)
+        public async Task<IActionResult> PutReserva(int id, [FromBody]Reserva reserva)
         {
             if (id != reserva.Id)
             {
