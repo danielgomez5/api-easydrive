@@ -45,7 +45,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/viatge/{id}")]
         [HttpPut]
-        public async Task<IActionResult> PutViatge(int id, Viatge viatge)
+        public async Task<IActionResult> PutViatge(int id, [FromBody] Viatge viatge)
         {
             if (id != viatge.Id)
             {
@@ -77,7 +77,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/viatge")]
         [HttpPost]
-        public async Task<ActionResult<Viatge>> PostViatge(Viatge viatge)
+        public async Task<ActionResult<Viatge>> PostViatge([FromBody] Viatge viatge)
         {
             _context.Viatges.Add(viatge);
             await _context.SaveChangesAsync();

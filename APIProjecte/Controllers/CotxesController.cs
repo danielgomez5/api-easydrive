@@ -45,7 +45,7 @@ namespace APIProjecte.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("api/cotxe/{id}")]
         [HttpPut]
-        public async Task<IActionResult> PutCotxe(string id, Cotxe cotxe)
+        public async Task<IActionResult> PutCotxe(string id, [FromBody ]Cotxe cotxe)
         {
             if (id != cotxe.Matricula)
             {
