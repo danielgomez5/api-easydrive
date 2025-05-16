@@ -165,5 +165,30 @@ namespace APIProjecte.Controllers
             return new List<Viatge>();
         }
 
+        [Route("api/viatges-taxista/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<List<Viatge>>> GetAllViatgesByTaxista(string id_usuari)
+        {
+            Usuari taxista = _context.Usuaris.Where(x => x.Dni == id_usuari)
+                .Include(x => x.Viatges).ThenInclude(x => x.IdReservaNavigation)
+                .FirstOrDefault();
+
+
+
+            if (taxista == null)
+            {
+                return NotFound("Usuari no trobat...");
+            }
+
+            List<Viatge> viatges = taxista.Viatges.ToList();
+
+            if (viatges.Any())
+            {
+                return viatges;
+            }
+
+            return new List<Viatge>();
+        }
+
     }
 }

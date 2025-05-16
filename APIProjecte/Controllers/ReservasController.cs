@@ -145,5 +145,29 @@ namespace APIProjecte.Controllers
         {
             return await _context.Reservas.Where(x => x.IdEstat == 2).ToListAsync();
         }
+
+        // GET: api/reserves-pendents
+        [Route("api/reserves-confirmats/{id_usuari}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Reserva>>> GetReservesConf(string id_usuari)
+        {
+            return await _context.Reservas.Where(x => x.IdEstat == 1 && x.IdUsuari == id_usuari && x.Estat != "OK").ToListAsync();
+        }
+
+
+        // GET: api/reserva-confirmada
+        [Route("api/reserva-confirmada/{id_usuari}/{id_reserva}")]
+        [HttpGet]
+        public async Task<ActionResult<Reserva>> GetReservaConfirmada(string id_usuari, int id_reserva)
+        {
+            Reserva r = _context.Reservas.Where(x => (x.IdUsuari == id_usuari && x.Id == id_reserva) && x.IdEstat == 1).FirstOrDefault();
+
+            if (r != null)
+            {
+                return r;
+            }
+
+            return null;
+        }
     }
 }

@@ -99,22 +99,29 @@ namespace APIProjecte.Controllers
             return CreatedAtAction("GetCotxe", new { id = cotxe.Matricula }, cotxe);
         }
 
-        // DELETE: api/cotxe/id
         [Route("api/cotxe/{id}")]
         [HttpDelete]
         public async Task<IActionResult> DeleteCotxe(string id)
         {
-            var cotxe = await _context.Cotxes.FindAsync(id);
+            Cotxe cotxe = await _context.Cotxes
+                .Include(c => c.IdUsuaris)
+                .FirstOrDefaultAsync(c => c.Matricula == id);
+
             if (cotxe == null)
             {
                 return NotFound();
             }
+
+            cotxe.IdUsuaris.Clear();
+
+            await _context.SaveChangesAsync();
 
             _context.Cotxes.Remove(cotxe);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
 
         private bool CotxeExists(string id)
         {
