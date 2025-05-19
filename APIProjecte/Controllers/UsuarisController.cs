@@ -510,6 +510,52 @@ namespace APIProjecte.Controllers
             return Ok(d);
         }
 
+        [Route("api/dades-pagament/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> PutDadesPagament(int id, [FromBody] DadesPagament dp)
+        {
+            if (id != dp.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(dp).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DadesPagamentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [Route("api/dades-pagament/{id}")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteDadesPagament(int id)
+        {
+            var dp = await _context.DadesPagaments.FindAsync(id);
+            if (dp == null)
+            {
+                return NotFound();
+            }
+
+            _context.DadesPagaments.Remove(dp);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         private bool DadesPagamentExists(int id)
         {
             return _context.DadesPagaments.Any(e => e.Id == id);

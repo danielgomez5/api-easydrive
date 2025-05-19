@@ -151,7 +151,7 @@ namespace APIProjecte.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reserva>>> GetReservesConf(string id_usuari)
         {
-            return await _context.Reservas.Where(x => x.IdEstat == 1 && x.IdUsuari == id_usuari && x.Estat != "OK").ToListAsync();
+            return await _context.Reservas.Where(x => x.IdEstat == 1 && x.IdUsuari == id_usuari && x.Estat == "OK").ToListAsync();
         }
 
 
