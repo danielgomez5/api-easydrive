@@ -117,8 +117,12 @@ namespace APIProjecte.Controllers
         public async Task<ActionResult<Viatge>> GetViatgeByReserva(int id)
         {
             Reserva r = _context.Reservas
-                .Include(x => x.Viatges)
-                .Where(x => x.Id == id).FirstOrDefault();
+        .Include(x => x.Viatges)
+            .ThenInclude(v => v.IdTaxistaNavigation)
+        .Include(x => x.Viatges)
+            .ThenInclude(v => v.IdCotxeNavigation)
+        .FirstOrDefault(x => x.Id == id);
+
 
             if (r != null)
             {
