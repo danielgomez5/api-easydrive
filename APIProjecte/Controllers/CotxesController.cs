@@ -192,13 +192,9 @@ namespace APIProjecte.Controllers
 
             if (f_tecnic != null)
             {
-                // Generamos un nombre único para el archivo, pero obtenemos solo el nombre del archivo (sin la ruta completa)
-                var perfilFileName = $"{Guid.NewGuid()}_{Path.GetFileName(f_tecnic.FileName)}";  // Usa Path.GetFileName() para obtener solo el nombre
+                var perfilFileName = $"{Guid.NewGuid()}_{Path.GetFileName(f_tecnic.FileName)}";
 
-                // Guardamos el archivo en la carpeta "Files" o donde sea necesario
                 var perfilPath = Path.Combine("Files", perfilFileName);
-
-                // Si necesitas verificar la extensión (aunque aceptamos cualquier tipo de archivo)
                 var validExtensions = new[] { ".pdf", ".jpg", ".jpeg", ".png", ".docx", ".txt", ".xlsx", ".csv" };
                 var fileExtension = Path.GetExtension(f_tecnic.FileName).ToLower();
 
@@ -207,14 +203,12 @@ namespace APIProjecte.Controllers
                     return BadRequest("El tipo de archivo no es válido.");
                 }
 
-                // Guardamos el archivo en el sistema de archivos
                 using (var stream = new FileStream(perfilPath, FileMode.Create))
                 {
                     await f_tecnic.CopyToAsync(stream);
                 }
 
-                // Guardamos solo el nombre del archivo en la propiedad correspondiente de tu modelo
-                cotxe.FotoFitxaTecnica = perfilFileName;  // Solo se guarda el nombre, no la ruta completa
+                cotxe.FotoFitxaTecnica = perfilFileName;
             }
 
             _context.Entry(cotxe).State = EntityState.Modified;
