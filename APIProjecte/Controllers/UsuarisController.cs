@@ -316,6 +316,26 @@ namespace APIProjecte.Controllers
             return NoContent();
         }
 
+        [Route("api/usuari_image_name/{id}")]
+        [HttpGet]
+        public async Task<ActionResult<string>> GetImagePerfName(string id)
+        {
+            Usuari u = _context.Usuaris.Where(x => x.Dni == id).FirstOrDefault();
+
+            try
+            {
+                if (u != null)
+                {
+                    return u.FotoPerfil;
+                }
+                return NotFound("Usuari no trobat");
+            }
+            catch {
+                return "";
+            }
+        }
+
+
         [Route("api/usuari_login")]
         [HttpPost]
         public async Task<ActionResult<Usuari>> Login([FromBody] LoginRequest loginRequest)
